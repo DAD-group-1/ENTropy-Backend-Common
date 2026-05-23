@@ -1,6 +1,6 @@
 {
   "name": "@entropy/backend-common",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "requires": true,
   "packages": {},
   "scripts": {
@@ -8,5 +8,8 @@
   },
   "dependencies": {
     "standard-version": "^9.5.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
