@@ -1,6 +1,6 @@
 {
   "name": "@dad-group-1/backend-common",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "requires": true,
   "packages": {},
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "dependencies": {
     "standard-version": "^9.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DAD-group-1/ENTropy-Backend-Common.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
