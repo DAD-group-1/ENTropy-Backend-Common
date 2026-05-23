@@ -1,0 +1,12 @@
+{
+  "name": "@entropy/backend-common",
+  "version": "0.0.2",
+  "requires": true,
+  "packages": {},
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "dependencies": {
+    "standard-version": "^9.5.0"
+  }
+}
