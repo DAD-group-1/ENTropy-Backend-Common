@@ -1,6 +1,6 @@
 {
-  "name": "@entropy/backend-common",
-  "version": "0.0.4",
+  "name": "@dad-group-1/backend-common",
+  "version": "0.0.5",
   "requires": true,
   "packages": {},
   "scripts": {
