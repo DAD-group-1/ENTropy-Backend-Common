@@ -8,7 +8,7 @@ export class InternalInstructor {
     @Column()
     department_id: number;
     @Column()
-    status: InstructorStatus;
+    status: InstructorStatus = InstructorStatus.ACTIVE;
     @Column()
     hire_date: Date;
     @Column()

@@ -1,5 +1,5 @@
-import {Column, Entity, PrimaryColumn} from 'typeorm';
-import {StudentStatus} from '../interfaces/student.interface';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { StudentStatus } from '../interfaces/student.interface';
 
 @Entity()
 export class InternalStudent {
@@ -10,7 +10,7 @@ export class InternalStudent {
     @Column()
     enrollment_year: number;
     @Column()
-    status: StudentStatus;
+    status: StudentStatus = StudentStatus.ACTIVE;
     @Column()
     address: string;
     @Column()
