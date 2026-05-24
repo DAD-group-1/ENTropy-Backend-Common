@@ -1,13 +1,19 @@
 {
   "name": "@dad-group-1/backend-common",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "requires": true,
   "packages": {},
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "dependencies": {
-    "standard-version": "^9.5.0"
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.1.23",
+    "@nestjs/microservices": "^11.1.23",
+    "@nestjs/typeorm": "^11.0.1",
+    "express": "^5.2.1",
+    "standard-version": "^9.5.0",
+    "typeorm": "^1.0.0"
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,9 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1"
   }
 }
