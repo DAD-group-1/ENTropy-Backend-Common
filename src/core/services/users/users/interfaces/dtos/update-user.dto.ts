@@ -3,6 +3,7 @@ export class UpdateUserDto {
   last_name?: string;
   email?: string;
   phone?: string;
+  password?: string;
   birthday?: Date;
   campus_id?: number;
   created_at?: Date;
