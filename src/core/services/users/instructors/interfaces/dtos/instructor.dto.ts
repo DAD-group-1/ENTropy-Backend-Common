@@ -12,7 +12,7 @@ export class CreateInstructorDto extends CreateUserDto {
 
 export class UpdateInstructorDto extends PartialType(CreateInstructorDto) {}
 
-export class CreateTeacherResponseDto {
+export class CreateInstructorResponseDto {
   user: CreateUserResponseDTO;
   department_id: number;
   status: string;
