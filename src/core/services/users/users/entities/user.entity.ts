@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -15,13 +16,18 @@ export class InternalUser {
   @Column()
   last_name: string;
   @Column()
+  @Index({unique: true})
   email: string;
+  @Column()
+  password: string;
   @Column()
   phone: string;
   @Column('date')
   birthday: Date;
   @Column()
   campus_id: number;
+  @Column()
+  is_active: boolean = true;
   @CreateDateColumn()
   created_at: Date;
   @UpdateDateColumn()
