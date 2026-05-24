@@ -1,8 +1,14 @@
 {
   "name": "@dad-group-1/backend-common",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "requires": true,
   "packages": {},
   "scripts": {
