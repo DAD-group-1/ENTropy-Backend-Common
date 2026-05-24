@@ -3,7 +3,6 @@ import {ApiProperty, PartialType} from '@nestjs/swagger';
 import {CreateUserDto, CreateUserResponseDTO} from '../../../users/interfaces/dtos/user.dto';
 
 export class CreateStudentDto extends CreateUserDto {
-  @ApiProperty({ description: 'The ID of the user associated with the student' })
   user_id: number;
 
   @ApiProperty({ description: 'The ID of the program the student is enrolled in' })
