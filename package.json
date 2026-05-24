@@ -1,15 +1,19 @@
 {
   "name": "@dad-group-1/backend-common",
-  "version": "0.0.10",
+  "version": "0.0.11",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "requires": true,
   "packages": {},
   "scripts": {
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "build": "tsc",
+    "release": "npm run build && standard-version && git push --follow-tags && npm publish"
   },
   "dependencies": {
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.1.23",
     "@nestjs/microservices": "^11.1.23",
+    "@nestjs/swagger": "^11.4.4",
     "@nestjs/typeorm": "^11.0.1",
     "express": "^5.2.1",
     "standard-version": "^9.5.0",
@@ -24,6 +28,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "typescript": "^5.0.0"
   }
 }
