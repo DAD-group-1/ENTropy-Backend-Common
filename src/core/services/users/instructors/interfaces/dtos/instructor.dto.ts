@@ -1,6 +1,6 @@
 import { InstructorStatus } from '../instructor.interface';
-import { CreateUserDto } from '../../../users/interfaces/dtos/create-user.dto';
 import { PartialType } from '@nestjs/swagger';
+import { CreateUserDto, CreateUserResponseDTO } from '../../../users/interfaces/dtos/user.dto';
 
 export class CreateInstructorDto extends CreateUserDto {
   user_id: number;
@@ -11,3 +11,11 @@ export class CreateInstructorDto extends CreateUserDto {
 }
 
 export class UpdateInstructorDto extends PartialType(CreateInstructorDto) {}
+
+export class CreateTeacherResponseDto {
+  user: CreateUserResponseDTO;
+  department_id: number;
+  status: string;
+  hire_date: Date;
+  specialization_id: number;
+}
