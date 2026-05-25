@@ -6,7 +6,6 @@ export enum StudentStatus {
 }
 
 export interface Student extends User {
-  id: number;
   user_id: number;
   program_id: number;
   enrollment_year: number;

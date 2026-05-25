@@ -6,7 +6,7 @@ export enum InstructorStatus {
 }
 
 export interface Instructor extends User {
-  id: number;
+  user_id: number;
   department_id: number;
   status: InstructorStatus;
   hire_date: Date;
