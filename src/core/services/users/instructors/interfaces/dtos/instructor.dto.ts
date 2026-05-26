@@ -1,20 +1,28 @@
 import { InstructorStatus } from '../instructor.interface';
-import {ApiProperty, PartialType} from '@nestjs/swagger';
-import { CreateUserDto, CreateUserResponseDTO } from '../../../users/interfaces/dtos/user.dto';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
+import {
+  CreateUserDto,
+  CreateUserResponseDTO,
+} from '../../../users/interfaces/dtos/user.dto';
 
 export class CreateInstructorDto extends CreateUserDto {
   user_id: number;
 
-  @ApiProperty({ description: 'The ID of the department the instructor belongs to' })
+  @ApiProperty({
+    description: 'The ID of the department the instructor belongs to',
+  })
   department_id: number;
 
-  @ApiProperty({ description: 'The current status of the instructor', enum: InstructorStatus })
+  @ApiProperty({
+    description: 'The current status of the instructor',
+    enum: InstructorStatus,
+  })
   status: InstructorStatus;
 
   @ApiProperty({ description: 'The date the instructor was hired' })
   hire_date: Date;
 
-  @ApiProperty({ description: 'The ID of the instructor\'s specialization' })
+  @ApiProperty({ description: "The ID of the instructor's specialization" })
   specialization_id: number;
 }
 

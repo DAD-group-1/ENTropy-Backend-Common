@@ -1,4 +1,4 @@
-import {ApiProperty, PartialType} from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 
 export class CreateUserDto {
   @ApiProperty({ description: 'The first name of the user' })
@@ -10,7 +10,7 @@ export class CreateUserDto {
   @ApiProperty({ description: 'The email address of the user' })
   email: string;
 
-  @ApiProperty({ description: 'The password for the user\'s account' })
+  @ApiProperty({ description: "The password for the user's account" })
   password: string;
 
   @ApiProperty({ description: 'The phone number of the user' })
@@ -19,13 +19,17 @@ export class CreateUserDto {
   @ApiProperty({ description: 'The birthday of the user' })
   birthday: Date;
 
-  @ApiProperty({ description: 'The ID of the campus the user is associated with' })
+  @ApiProperty({
+    description: 'The ID of the campus the user is associated with',
+  })
   campus_id: number;
 
   @ApiProperty({ description: 'Indicates whether the user account is active' })
   created_at: Date;
 
-  @ApiProperty({ description: 'The date and time when the user account was last updated' })
+  @ApiProperty({
+    description: 'The date and time when the user account was last updated',
+  })
   updated_at: Date;
 }
 

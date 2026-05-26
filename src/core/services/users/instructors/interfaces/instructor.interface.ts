@@ -1,4 +1,4 @@
-import {User} from "../../users/interfaces/user.interface";
+import { User } from '../../users/interfaces/user.interface';
 
 export enum InstructorStatus {
   ACTIVE = 'Active',

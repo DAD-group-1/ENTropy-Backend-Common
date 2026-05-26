@@ -16,7 +16,7 @@ export class InternalUser {
   @Column()
   last_name: string;
   @Column()
-  @Index({unique: true})
+  @Index({ unique: true })
   email: string;
   @Column()
   password: string;
