@@ -15,8 +15,8 @@ dotenv.config(); // Load environment variables from .env
 export const createWinstonLogger = (
   service: string,
   level: string,
-): LoggerService => {
-  return WinstonModule.createLogger({
+): LoggerService =>
+  WinstonModule.createLogger({
     level: level,
     format: winston.format.json(),
     defaultMeta: { service: service },
@@ -35,4 +35,3 @@ export const createWinstonLogger = (
         : []),
     ],
   });
-};
