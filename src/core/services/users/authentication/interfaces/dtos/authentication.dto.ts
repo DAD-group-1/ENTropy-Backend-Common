@@ -10,4 +10,18 @@ export class LoginDto {
 export class LoginResponseDto {
   @ApiProperty({ description: 'Access token given by the backend' })
   access_token: string;
+  @ApiProperty({ description: 'Refresh token given by the backend' })
+  refresh_token: string;
+}
+
+export class RefreshTokenDto {
+  @ApiProperty({ description: 'Refresh token given by the backend' })
+  refresh_token: string;
+}
+
+export class RefreshTokenResponseDto {
+  @ApiProperty({ description: 'Access token given by the backend' })
+  access_token: string;
+  @ApiProperty({ description: 'Refresh token given by the backend' })
+  refresh_token: string;
 }
