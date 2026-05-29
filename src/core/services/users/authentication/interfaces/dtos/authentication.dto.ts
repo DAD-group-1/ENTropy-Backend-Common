@@ -18,3 +18,11 @@ export class RefreshTokenDto {
   @ApiProperty({ description: 'Refresh token given by the backend addressed to the refresh endpoint' })
   refresh_token: string;
 }
+
+export class LogoutDto {
+    @ApiProperty({ description: 'Refresh token given by the backend' })
+    refresh_token: string;
+}
+
+export class LogoutResponseDto {
+}
