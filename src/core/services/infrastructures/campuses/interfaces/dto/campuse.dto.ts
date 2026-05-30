@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { CampuseStatus } from '../interfaces/campuse.interface';
+import { CampuseStatus } from '../campuse.interface';
 
 export class CreateCampuseDto {
   @ApiProperty()

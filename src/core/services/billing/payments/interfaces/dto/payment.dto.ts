@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaymentStatus } from '../interfaces/payment.interface';
+import { PaymentStatus } from '../payment.interface';
 
 export class CreatePaymentDto {
   @ApiProperty()
@@ -28,7 +28,7 @@ export class CreatePaymentDto {
   payment_method_id: number;
 
   @ApiProperty()
-  academic year: number;
+  academic_year: number;
 
   @ApiProperty()
   semester: any;
@@ -41,8 +41,6 @@ export class CreatePaymentDto {
 
   @ApiProperty()
   updated_at: Date;
-
 }
 
 export class UpdatePaymentDto extends PartialType(CreatePaymentDto) {}
-

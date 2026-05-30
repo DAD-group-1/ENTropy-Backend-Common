@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { ScheduleStatus } from '../interfaces/schedule.interface';
+import { ScheduleStatus } from '../schedule.interface';
 
 export class CreateScheduleDto {
   @ApiProperty()

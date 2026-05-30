@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { AttendanceStatus } from '../interfaces/attendance.interface';
+import { AttendanceStatus } from '../attendance.interface';
 
 export class CreateAttendanceDto {
   @ApiProperty()

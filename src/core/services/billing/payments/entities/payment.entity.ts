@@ -20,7 +20,7 @@ export class InternalPayment {
   @Column()
   payment_method_id: number;
   @Column()
-  academic year: number;
+  academic_year: number;
   @Column()
   semester: any;
   @Column()
@@ -30,4 +30,3 @@ export class InternalPayment {
   @Column()
   updated_at: Date;
 }
-

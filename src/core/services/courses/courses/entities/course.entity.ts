@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
-import { CourseStatus } from '../courses/interfaces/course.interface';
+import { CourseStatus } from '../interfaces/course.interface';
 
 @Entity()
 export class InternalCourse {

@@ -1,5 +1,4 @@
-export enum PaymentStatus {
-}
+export enum PaymentStatus {}
 
 export interface Payment {
   id: number;
@@ -10,10 +9,9 @@ export interface Payment {
   status: PaymentStatus;
   payment_date: Date;
   payment_method_id: number;
-  academic year: number;
+  academic_year: number;
   semester: any;
   notes: string;
   created_at: Date;
   updated_at: Date;
 }
-

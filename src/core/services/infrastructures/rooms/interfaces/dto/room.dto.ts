@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { RoomStatus } from '../interfaces/room.interface';
+import { RoomStatus } from '../room.interface';
 
 export class CreateRoomDto {
   @ApiProperty()

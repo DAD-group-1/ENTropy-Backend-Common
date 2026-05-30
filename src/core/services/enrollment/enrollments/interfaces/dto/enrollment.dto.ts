@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { EnrollmentStatus } from '../interfaces/enrollment.interface';
+import { EnrollmentStatus } from '../enrollment.interface';
 
 export class CreateEnrollmentDto {
   @ApiProperty()

@@ -1,5 +1,5 @@
 export enum EnrollmentStatus {
-  IN PROGRESS = 'In progress',
+  IN_PROGRESS = 'In progress',
   VALIDATED = 'Validated',
 }
 
@@ -14,4 +14,3 @@ export interface Enrollment {
   created_at: Date;
   updated_at: Date;
 }
-
