@@ -1,4 +1,4 @@
-import {ApiProperty} from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class LoginDto {
   @ApiProperty({ description: 'The email address of the account' })
@@ -15,14 +15,16 @@ export class TokenResponseDto {
 }
 
 export class RefreshTokenDto {
-  @ApiProperty({ description: 'Refresh token given by the backend addressed to the refresh endpoint' })
+  @ApiProperty({
+    description:
+      'Refresh token given by the backend addressed to the refresh endpoint',
+  })
   refresh_token: string;
 }
 
 export class LogoutDto {
-    @ApiProperty({ description: 'Refresh token given by the backend' })
-    refresh_token: string;
+  @ApiProperty({ description: 'Refresh token given by the backend' })
+  refresh_token: string;
 }
 
-export class LogoutResponseDto {
-}
+export class LogoutResponseDto {}

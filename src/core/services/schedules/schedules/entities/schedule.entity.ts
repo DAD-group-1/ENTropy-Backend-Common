@@ -1,0 +1,32 @@
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { ScheduleStatus } from '../interfaces/schedule.interface';
+
+@Entity()
+export class InternalSchedule {
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column()
+  event_id: number;
+  @Column()
+  course_id: number;
+  @Column()
+  instructor_id: number;
+  @Column()
+  room_id: number;
+  @Column()
+  start_date: Date;
+  @Column()
+  end_date: Date;
+  @Column()
+  semester: any;
+  @Column()
+  academic_year: any;
+  @Column()
+  status: ScheduleStatus;
+  @Column()
+  last_modified: Date;
+  @Column()
+  created_at: Date;
+  @Column()
+  updated_at: Date;
+}
