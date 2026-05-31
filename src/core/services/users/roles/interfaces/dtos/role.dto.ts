@@ -3,9 +3,6 @@ import {PartialType} from '@nestjs/mapped-types';
 
 export class CreateRoleDto {
   @ApiProperty()
-  id: number;
-
-  @ApiProperty()
   name: string;
 
   @ApiProperty()

@@ -71,6 +71,7 @@ export class AddRoleResponseDto {}
 
 export class RemoveRoleDto {
     user_id: number;
+    role_id: number;
 }
 
 export class RemoveRoleResponseDto {}
