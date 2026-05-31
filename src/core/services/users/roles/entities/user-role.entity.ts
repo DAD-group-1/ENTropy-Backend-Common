@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import {Entity, PrimaryColumn} from 'typeorm';
 
 @Entity()
 export class InternalUserRole {
   @PrimaryColumn()
   user_id: number;
-  @Column()
+  @PrimaryColumn()
   role_id: number;
 }

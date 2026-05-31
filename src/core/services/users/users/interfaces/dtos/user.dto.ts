@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from '@nestjs/swagger';
+import {ApiProperty, PartialType} from '@nestjs/swagger';
 
 export class CreateUserDto {
   @ApiProperty({ description: 'The first name of the user' })
@@ -33,6 +33,22 @@ export class CreateUserDto {
   updated_at: Date;
 }
 
+export class GetUserRoleDto{
+    @ApiProperty()
+    user_id: number;
+}
+
+export class GetUserRoleResponseDto{
+    @ApiProperty()
+    id: number;
+
+    @ApiProperty()
+    name: string;
+
+    @ApiProperty()
+    description: string;
+}
+
 export class UpdateUserDto extends PartialType(CreateUserDto) {}
 
 export class CreateUserResponseDTO {
@@ -45,3 +61,16 @@ export class CreateUserResponseDTO {
   campus_id: number;
   is_active: boolean;
 }
+
+export class AddRoleDto {
+    user_id: number;
+    role_id: number;
+}
+
+export class AddRoleResponseDto {}
+
+export class RemoveRoleDto {
+    user_id: number;
+}
+
+export class RemoveRoleResponseDto {}
