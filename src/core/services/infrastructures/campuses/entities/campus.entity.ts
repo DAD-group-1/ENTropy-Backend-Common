@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { CampuseStatus } from '../interfaces/campuse.interface';
+import { CampuseStatus } from '../interfaces/campus.interface';
 
 @Entity()
 export class InternalCampuse {
