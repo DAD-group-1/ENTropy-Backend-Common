@@ -1,7 +1,9 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DynamicModule } from '@nestjs/common';
-import { DataSource } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
+
+type DbType = DataSourceOptions['type'];
 
 /**
  * Creates a dynamic database module for NestJS using TypeORM and configuration from environment variables.
@@ -14,7 +16,7 @@ export const createDatabaseModule = (): DynamicModule =>
     imports: [ConfigModule],
     inject: [ConfigService],
     useFactory: (configService: ConfigService) => ({
-      type: 'postgres',
+      type: configService.get<DbType>('DB_TYPE', 'postgres'),
       host: configService.get<string>('DB_HOST', 'localhost'),
       port: configService.get<number>('DB_PORT', 5432),
       username: configService.get<string>('DB_USER', 'postgres'),
@@ -22,7 +24,7 @@ export const createDatabaseModule = (): DynamicModule =>
       database: configService.get<string>('DB_NAME'),
       autoLoadEntities: true,
       synchronize: false,
-    }),
+    } as DataSourceOptions),
   });
 
 /**
@@ -33,7 +35,7 @@ export const createDatabaseModule = (): DynamicModule =>
  */
 export const createDatabase = (): DataSource =>
   new DataSource({
-    type: 'postgres',
+    type: (process.env.DB_TYPE || 'postgres') as DbType,
     host: process.env.DB_HOST_CLI || 'localhost',
     port: parseInt(process.env.DB_PORT_CLI || '5432', 10),
     username: process.env.DB_USER || 'postgres',
@@ -41,4 +43,4 @@ export const createDatabase = (): DataSource =>
     database: process.env.DB_NAME || 'entropy_users_db',
     entities: ['src/**/*.entity{.ts,.js}'],
     migrations: ['src/database/migrations/*{.ts,.js}'],
-  });
+  } as DataSourceOptions);
