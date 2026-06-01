@@ -1,5 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 /**
  * CREATE
@@ -13,6 +12,20 @@ export class CreateNotificationDto {
 
   @ApiProperty({ description: 'The message of the notification' })
   message: string;
+}
+
+/**
+ * UPDATE
+ */
+export class UpdateNotificationDto {
+  @ApiPropertyOptional()
+  title?: string;
+
+  @ApiPropertyOptional()
+  message?: string;
+
+  @ApiPropertyOptional()
+  read_at?: Date;
 }
 
 /**
@@ -47,8 +60,3 @@ export class GetNotificationResponseDto extends NotificationResponseDto {}
  * DELETE RESPONSE DTO
  */
 export class DeleteNotificationResponseDto {}
-
-/**
- * UPDATE
- */
-export class UpdateNotificationDto extends PartialType(CreateNotificationDto) {}
