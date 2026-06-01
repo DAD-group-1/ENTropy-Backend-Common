@@ -1,6 +1,8 @@
 import {ApiProperty, PartialType} from '@nestjs/swagger';
+import {Exclude} from 'class-transformer';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateUserDto {
+export class CreateUserRequestDto {
   @ApiProperty({ description: 'The first name of the user' })
   first_name: string;
 
@@ -11,6 +13,7 @@ export class CreateUserDto {
   email: string;
 
   @ApiProperty({ description: "The password for the user's account" })
+  @Exclude()
   password: string;
 
   @ApiProperty({ description: 'The phone number of the user' })
@@ -23,22 +26,55 @@ export class CreateUserDto {
     description: 'The ID of the campus the user is associated with',
   })
   campus_id: number;
+}
 
-  @ApiProperty({ description: 'Indicates whether the user account is active' })
+export class UpdateUserRequestDto extends PartialType(CreateUserRequestDto) {}
+
+export class UserResponseDto {
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  first_name: string;
+
+  @ApiProperty()
+  last_name: string;
+
+  @ApiProperty()
+  email: string;
+
+  @ApiProperty()
+  phone: string;
+
+  @ApiProperty()
+  birthday: Date;
+
+  @ApiProperty()
+  campus_id: number;
+
+  @ApiProperty()
+  is_active: boolean;
+
+  @ApiProperty()
   created_at: Date;
 
-  @ApiProperty({
-    description: 'The date and time when the user account was last updated',
-  })
+  @ApiProperty()
   updated_at: Date;
 }
 
-export class GetUserRoleDto{
+export class UserListResponseDto extends PaginationDto<UserResponseDto> {}
+
+export class DeleteUserRequestDto {
+  @ApiProperty()
+  id: number;
+}
+
+export class GetUserRoleDto {
     @ApiProperty()
     user_id: number;
 }
 
-export class GetUserRoleResponseDto{
+export class GetUserRoleResponseDto {
     @ApiProperty()
     id: number;
 
@@ -49,29 +85,35 @@ export class GetUserRoleResponseDto{
     description: string;
 }
 
-export class UpdateUserDto extends PartialType(CreateUserDto) {}
-
-export class CreateUserResponseDTO {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  birthday: Date;
-  campus_id: number;
-  is_active: boolean;
-}
-
-export class AddRoleDto {
+export class AddRoleRequestDto {
+    @ApiProperty()
     user_id: number;
+
+    @ApiProperty()
     role_id: number;
 }
 
-export class AddRoleResponseDto {}
+export class AddRoleResponseDto {
+  @ApiProperty()
+  message: string;
+}
 
-export class RemoveRoleDto {
+export class RemoveRoleRequestDto {
+    @ApiProperty()
     user_id: number;
+
+    @ApiProperty()
     role_id: number;
 }
 
-export class RemoveRoleResponseDto {}
+export class RemoveRoleResponseDto {
+  @ApiProperty()
+  message: string;
+}
+
+// ============ BACKWARD COMPATIBILITY ============
+export class CreateUserDto extends CreateUserRequestDto {}
+export class UpdateUserDto extends UpdateUserRequestDto {}
+export class CreateUserResponseDTO extends UserResponseDto {}
+export class AddRoleDto extends AddRoleRequestDto {}
+export class RemoveRoleDto extends RemoveRoleRequestDto {}

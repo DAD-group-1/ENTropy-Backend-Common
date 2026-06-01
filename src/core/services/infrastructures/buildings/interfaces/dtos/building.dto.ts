@@ -1,7 +1,18 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
+import {ApiProperty} from '@nestjs/swagger';
+import {PartialType} from '@nestjs/mapped-types';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateBuildingDto {
+export class CreateBuildingRequestDto {
+  @ApiProperty({ description: 'The name of the building' })
+  name: string;
+
+  @ApiProperty({ description: 'The ID of the campus' })
+  campus_id: number;
+}
+
+export class UpdateBuildingRequestDto extends PartialType(CreateBuildingRequestDto) {}
+
+export class BuildingResponseDto {
   @ApiProperty()
   id: number;
 
@@ -12,4 +23,13 @@ export class CreateBuildingDto {
   name: string;
 }
 
-export class UpdateBuildingDto extends PartialType(CreateBuildingDto) {}
+export class BuildingListResponseDto extends PaginationDto<BuildingResponseDto> {}
+
+export class DeleteBuildingRequestDto {
+  @ApiProperty()
+  id: number;
+}
+
+// Keep backward compatibility
+export class CreateBuildingDto extends CreateBuildingRequestDto {}
+export class UpdateBuildingDto extends UpdateBuildingRequestDto {}

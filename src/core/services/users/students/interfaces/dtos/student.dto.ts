@@ -1,13 +1,10 @@
-import { StudentStatus } from '../student.interface';
-import { ApiProperty, PartialType } from '@nestjs/swagger';
-import {
-  CreateUserDto,
-  CreateUserResponseDTO,
-} from '../../../users/interfaces/dtos/user.dto';
+import {StudentStatus} from '../student.interface';
+import {ApiProperty, PartialType} from '@nestjs/swagger';
+import {Exclude} from 'class-transformer';
+import {CreateUserRequestDto, UserResponseDto,} from '../../../users/interfaces/dtos/user.dto';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateStudentDto extends CreateUserDto {
-  user_id: number;
-
+export class CreateStudentRequestDto extends CreateUserRequestDto {
   @ApiProperty({
     description: 'The ID of the program the student is enrolled in',
   })
@@ -32,24 +29,85 @@ export class CreateStudentDto extends CreateUserDto {
   zip_code: string;
 
   @ApiProperty({ description: "The name of the student's emergency contact" })
+  @Exclude()
   emergency_contact: string;
 
   @ApiProperty({
     description: "The phone number of the student's emergency contact",
   })
+  @Exclude()
   emergency_phone: string;
 }
 
-export class UpdateStudentDto extends PartialType(CreateStudentDto) {}
+export class UpdateStudentRequestDto extends PartialType(CreateStudentRequestDto) {}
 
-export class CreateStudentResponseDto {
-  user: CreateUserResponseDTO;
+export class StudentResponseDto {
+  @ApiProperty()
+  user_id: number;
+
+  @ApiProperty()
   program_id: number;
+
+  @ApiProperty()
   enrollment_year: number;
+
+  @ApiProperty()
   status: StudentStatus;
+
+  @ApiProperty()
   address: string;
+
+  @ApiProperty()
   city: string;
+
+  @ApiProperty()
   zip_code: string;
+
+  @ApiProperty()
+  @Exclude()
   emergency_contact: string;
+
+  @ApiProperty()
+  @Exclude()
+  emergency_phone: string;
+}
+
+export class StudentListResponseDto extends PaginationDto<StudentResponseDto> {}
+
+export class DeleteStudentRequestDto {
+  @ApiProperty()
+  user_id: number;
+}
+
+export class CreateStudentDto extends CreateStudentRequestDto {}
+export class UpdateStudentDto extends UpdateStudentRequestDto {}
+export class CreateStudentResponseDto {
+  @ApiProperty()
+  user: UserResponseDto;
+
+  @ApiProperty()
+  program_id: number;
+
+  @ApiProperty()
+  enrollment_year: number;
+
+  @ApiProperty()
+  status: StudentStatus;
+
+  @ApiProperty()
+  address: string;
+
+  @ApiProperty()
+  city: string;
+
+  @ApiProperty()
+  zip_code: string;
+
+  @ApiProperty()
+  @Exclude()
+  emergency_contact: string;
+
+  @ApiProperty()
+  @Exclude()
   emergency_phone: string;
 }

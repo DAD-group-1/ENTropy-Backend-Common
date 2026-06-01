@@ -1,7 +1,20 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
+import {ApiProperty, PartialType} from '@nestjs/swagger';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateRoleDto {
+export class CreateRoleRequestDto {
+  @ApiProperty({ description: 'The name of the role' })
+  name: string;
+
+  @ApiProperty({ description: 'The description of the role' })
+  description: string;
+}
+
+export class UpdateRoleRequestDto extends PartialType(CreateRoleRequestDto) {}
+
+export class RoleResponseDto {
+  @ApiProperty()
+  id: number;
+
   @ApiProperty()
   name: string;
 
@@ -9,9 +22,15 @@ export class CreateRoleDto {
   description: string;
 }
 
-export class UpdateRoleDto extends PartialType(CreateRoleDto) {}
+export class RoleListResponseDto extends PaginationDto<RoleResponseDto> {}
 
-export class DeleteRoleDto  {
-    @ApiProperty()
-    role_id: number;
+export class DeleteRoleRequestDto {
+  @ApiProperty()
+  role_id: number;
 }
+
+// Keep backward compatibility
+export class CreateRoleDto extends CreateRoleRequestDto {}
+export class UpdateRoleDto extends UpdateRoleRequestDto {}
+export class DeleteRoleDto extends DeleteRoleRequestDto {}
+

@@ -1,8 +1,40 @@
-import { CourseStatus } from '../course.interface';
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
+import {CourseStatus} from '../course.interface';
+import {ApiProperty} from '@nestjs/swagger';
+import {PartialType} from '@nestjs/mapped-types';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateCourseDto {
+export class CreateCourseRequestDto {
+  @ApiProperty({ description: 'The name of the course' })
+  name: string;
+
+  @ApiProperty({ description: 'The course code' })
+  code: string;
+
+  @ApiProperty({ description: 'The ID of the program' })
+  program_id: number;
+
+  @ApiProperty({ description: 'The semester of the course' })
+  semester: number;
+
+  @ApiProperty({ description: 'The number of credits' })
+  credits: number;
+
+  @ApiProperty({ description: 'Total hours for the course' })
+  total_hours: number;
+
+  @ApiProperty({ description: 'The ID of the instructor' })
+  instructor_id: number;
+
+  @ApiProperty({ description: 'The ID of the room' })
+  room_id: number;
+
+  @ApiProperty({ description: 'The status of the course', enum: CourseStatus })
+  status: CourseStatus;
+}
+
+export class UpdateCourseRequestDto extends PartialType(CreateCourseRequestDto) {}
+
+export class CourseResponseDto {
   @ApiProperty()
   id: number;
 
@@ -31,7 +63,7 @@ export class CreateCourseDto {
   room_id: number;
 
   @ApiProperty()
-  status: CourseStatus = CourseStatus.ACTIVE;
+  status: CourseStatus;
 
   @ApiProperty()
   created_at: Date;
@@ -40,4 +72,13 @@ export class CreateCourseDto {
   updated_at: Date;
 }
 
-export class UpdateCourseDto extends PartialType(CreateCourseDto) {}
+export class CourseListResponseDto extends PaginationDto<CourseResponseDto> {}
+
+export class DeleteCourseRequestDto {
+  @ApiProperty()
+  id: number;
+}
+
+// Keep backward compatibility
+export class CreateCourseDto extends CreateCourseRequestDto {}
+export class UpdateCourseDto extends UpdateCourseRequestDto {}

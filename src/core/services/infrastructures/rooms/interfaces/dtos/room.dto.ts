@@ -1,8 +1,37 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
-import { RoomStatus } from '../room.interface';
+import {ApiProperty} from '@nestjs/swagger';
+import {PartialType} from '@nestjs/mapped-types';
+import {RoomStatus} from '../room.interface';
+import {PaginationDto} from "../../../../common/dtos/pagination.dto";
 
-export class CreateRoomDto {
+export class CreateRoomRequestDto {
+  @ApiProperty({ description: 'The name of the room' })
+  name: string;
+
+  @ApiProperty({ description: 'The ID of the campus' })
+  campus_id: number;
+
+  @ApiProperty({ description: 'The ID of the building' })
+  building_id: number;
+
+  @ApiProperty({ description: 'The floor number' })
+  floor: any;
+
+  @ApiProperty({ description: 'The seating capacity of the room' })
+  capacity: number;
+
+  @ApiProperty({ description: 'The ID of the room type' })
+  room_type_id: number;
+
+  @ApiProperty({ description: 'Equipment available in the room' })
+  equipement: string;
+
+  @ApiProperty({ description: 'The status of the room', enum: RoomStatus })
+  status: RoomStatus;
+}
+
+export class UpdateRoomRequestDto extends PartialType(CreateRoomRequestDto) {}
+
+export class RoomResponseDto {
   @ApiProperty()
   id: number;
 
@@ -37,4 +66,14 @@ export class CreateRoomDto {
   updated_at: Date;
 }
 
-export class UpdateRoomDto extends PartialType(CreateRoomDto) {}
+export class RoomListResponseDto extends PaginationDto<RoomResponseDto> {}
+
+export class DeleteRoomRequestDto {
+  @ApiProperty()
+  id: number;
+}
+
+// Keep backward compatibility
+export class CreateRoomDto extends CreateRoomRequestDto {}
+export class UpdateRoomDto extends UpdateRoomRequestDto {}
+
