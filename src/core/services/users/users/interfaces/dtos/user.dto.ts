@@ -69,51 +69,7 @@ export class DeleteUserRequestDto {
   id: number;
 }
 
-export class GetUserRoleDto {
-    @ApiProperty()
-    user_id: number;
-}
-
-export class GetUserRoleResponseDto {
-    @ApiProperty()
-    id: number;
-
-    @ApiProperty()
-    name: string;
-
-    @ApiProperty()
-    description: string;
-}
-
-export class AddRoleRequestDto {
-    @ApiProperty()
-    user_id: number;
-
-    @ApiProperty()
-    role_id: number;
-}
-
-export class AddRoleResponseDto {
-  @ApiProperty()
-  message: string;
-}
-
-export class RemoveRoleRequestDto {
-    @ApiProperty()
-    user_id: number;
-
-    @ApiProperty()
-    role_id: number;
-}
-
-export class RemoveRoleResponseDto {
-  @ApiProperty()
-  message: string;
-}
-
 // ============ BACKWARD COMPATIBILITY ============
 export class CreateUserDto extends CreateUserRequestDto {}
 export class UpdateUserDto extends UpdateUserRequestDto {}
 export class CreateUserResponseDTO extends UserResponseDto {}
-export class AddRoleDto extends AddRoleRequestDto {}
-export class RemoveRoleDto extends RemoveRoleRequestDto {}
