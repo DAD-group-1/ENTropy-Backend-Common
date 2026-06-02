@@ -21,3 +21,6 @@ export * from './core/services/schedules';
 
 // User Microservice
 export * from './core/services/users';
+
+// Notification Microservice
+export * from './core/services/notifications';

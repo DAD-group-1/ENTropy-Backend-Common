@@ -1,7 +1,7 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {AttendanceStatus} from '../attendance.interface';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { AttendanceStatus } from '../attendance.interface';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 // Create Request
 export class CreateAttendanceRequestDto {
@@ -18,7 +18,9 @@ export class CreateAttendanceRequestDto {
   note?: string;
 }
 
-export class UpdateAttendanceRequestDto extends PartialType(CreateAttendanceRequestDto) {}
+export class UpdateAttendanceRequestDto extends PartialType(
+  CreateAttendanceRequestDto,
+) {}
 
 export class AttendanceResponseDto {
   @ApiProperty()

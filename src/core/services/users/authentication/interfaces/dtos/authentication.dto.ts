@@ -1,5 +1,5 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {Exclude} from 'class-transformer';
+import { ApiProperty } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
 
 export class LoginRequestDto {
   @ApiProperty({ description: 'The email address of the account' })

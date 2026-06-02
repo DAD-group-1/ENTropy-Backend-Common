@@ -1,9 +1,6 @@
 import { WinstonModule } from 'nest-winston';
 import { LoggerService } from '@nestjs/common';
 import winston from 'winston';
-import * as dotenv from 'dotenv';
-
-dotenv.config(); // Load environment variables from .env
 
 /**
  * Creates a Winston logger configured for NestJS applications.
