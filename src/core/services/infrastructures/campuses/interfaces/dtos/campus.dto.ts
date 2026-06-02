@@ -94,5 +94,5 @@ export class DeleteCampusRequestDto {
 }
 
 // Keep backward compatibility
-export class CreateCampuseDto extends CreateCampusRequestDto {}
-export class UpdateCampuseDto extends UpdateCampusRequestDto {}
+export class CreateCampusDto extends CreateCampusRequestDto {}
+export class UpdateCampusDto extends UpdateCampusRequestDto {}
