@@ -9,7 +9,7 @@ export class PaginationDto<T> {
     description: 'Array of data items',
     isArray: true,
   })
-  data: T[];
+  items: T[];
 
   @ApiProperty({
     description: 'Total number of items',
@@ -29,8 +29,8 @@ export class PaginationDto<T> {
   })
   limit: number;
 
-  constructor(data: T[], total: number, page: number, limit: number) {
-    this.data = data;
+  constructor(items: T[], total: number, page: number, limit: number) {
+    this.items = items;
     this.total = total;
     this.page = page;
     this.limit = limit;
