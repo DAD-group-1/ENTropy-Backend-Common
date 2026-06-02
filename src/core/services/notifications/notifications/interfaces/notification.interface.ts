@@ -1,8 +1,9 @@
 export interface Notification {
-  notification_id: number;
+  id: number;
   user_id: number;
   title: string;
   message: string;
-  created_at: Date
+  created_at: Date;
+  updated_at: Date;
   read_at?: Date;
 }
