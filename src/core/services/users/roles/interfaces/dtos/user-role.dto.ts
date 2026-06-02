@@ -1,6 +1,6 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateUserRoleRequestDto {
   @ApiProperty({ description: 'The ID of the user' })
@@ -10,7 +10,9 @@ export class CreateUserRoleRequestDto {
   role_id: number;
 }
 
-export class UpdateUserRoleRequestDto extends PartialType(CreateUserRoleRequestDto) {}
+export class UpdateUserRoleRequestDto extends PartialType(
+  CreateUserRoleRequestDto,
+) {}
 
 export class UserRoleResponseDto {
   @ApiProperty()
@@ -39,18 +41,17 @@ export class GetUserRoleDto {
   user_id: number;
 }
 
-export class AddRoleToUserDto  {
-    @ApiProperty({ description: 'The ID of the role' })
-    role_id: number;
+export class AddRoleToUserDto {
+  @ApiProperty({ description: 'The ID of the role' })
+  role_id: number;
 }
 
-export class RemoveUserRoleDto  {
-    @ApiProperty({ description: 'The ID of the role' })
-    role_id: number;
+export class RemoveUserRoleDto {
+  @ApiProperty({ description: 'The ID of the role' })
+  role_id: number;
 }
 
-export class  AssignRolesDto{
-    @ApiProperty({ description: 'The ID of the role' })
-    role_ids: number[];
+export class AssignRolesDto {
+  @ApiProperty({ description: 'The ID of the role' })
+  role_ids: number[];
 }
-

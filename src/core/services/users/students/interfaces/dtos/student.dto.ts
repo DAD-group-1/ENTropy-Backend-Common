@@ -1,8 +1,11 @@
-import {StudentStatus} from '../student.interface';
-import {ApiProperty, PartialType} from '@nestjs/swagger';
-import {Exclude} from 'class-transformer';
-import {CreateUserRequestDto, UserResponseDto,} from '../../../users/interfaces/dtos/user.dto';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { StudentStatus } from '../student.interface';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
+import {
+  CreateUserRequestDto,
+  UserResponseDto,
+} from '../../../users/interfaces/dtos/user.dto';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateStudentRequestDto extends CreateUserRequestDto {
   @ApiProperty({
@@ -39,7 +42,9 @@ export class CreateStudentRequestDto extends CreateUserRequestDto {
   emergency_phone: string;
 }
 
-export class UpdateStudentRequestDto extends PartialType(CreateStudentRequestDto) {}
+export class UpdateStudentRequestDto extends PartialType(
+  CreateStudentRequestDto,
+) {}
 
 export class StudentResponseDto {
   @ApiProperty()

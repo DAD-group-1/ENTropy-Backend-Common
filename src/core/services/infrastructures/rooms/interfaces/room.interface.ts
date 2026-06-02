@@ -1,5 +1,4 @@
-export enum RoomStatus {
-}
+export enum RoomStatus {}
 
 export interface Room {
   id: number;
@@ -14,4 +13,3 @@ export interface Room {
   created_at: Date;
   updated_at: Date;
 }
-

@@ -1,5 +1,4 @@
-export enum ScheduleStatus {
-}
+export enum ScheduleStatus {}
 
 export interface Schedule {
   id: number;
@@ -16,4 +15,3 @@ export interface Schedule {
   created_at: Date;
   updated_at: Date;
 }
-

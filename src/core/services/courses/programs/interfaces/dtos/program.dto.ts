@@ -1,7 +1,7 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {ProgramStatus} from '../program.interface';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { ProgramStatus } from '../program.interface';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateProgramRequestDto {
   @ApiProperty({ description: 'The name of the program' })
@@ -25,11 +25,16 @@ export class CreateProgramRequestDto {
   @ApiProperty({ description: 'Maximum number of students' })
   max_students: number;
 
-  @ApiProperty({ description: 'The status of the program', enum: ProgramStatus })
+  @ApiProperty({
+    description: 'The status of the program',
+    enum: ProgramStatus,
+  })
   status: ProgramStatus;
 }
 
-export class UpdateProgramRequestDto extends PartialType(CreateProgramRequestDto) {}
+export class UpdateProgramRequestDto extends PartialType(
+  CreateProgramRequestDto,
+) {}
 
 export class ProgramResponseDto {
   @ApiProperty()

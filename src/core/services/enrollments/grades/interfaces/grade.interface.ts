@@ -4,4 +4,3 @@ export interface Grade {
   grade: any;
   name: string;
 }
-

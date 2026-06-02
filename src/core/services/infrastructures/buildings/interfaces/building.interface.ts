@@ -3,4 +3,3 @@ export interface Building {
   campus_id: number;
   name: string;
 }
-

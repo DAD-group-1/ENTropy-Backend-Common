@@ -1,7 +1,7 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {EnrollmentStatus} from '../enrollment.interface';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { EnrollmentStatus } from '../enrollment.interface';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateEnrollmentRequestDto {
   @ApiProperty({ description: 'The ID of the student' })
@@ -23,7 +23,9 @@ export class CreateEnrollmentRequestDto {
   enrollment_date: Date;
 }
 
-export class UpdateEnrollmentRequestDto extends PartialType(CreateEnrollmentRequestDto) {}
+export class UpdateEnrollmentRequestDto extends PartialType(
+  CreateEnrollmentRequestDto,
+) {}
 
 export class EnrollmentResponseDto {
   @ApiProperty()

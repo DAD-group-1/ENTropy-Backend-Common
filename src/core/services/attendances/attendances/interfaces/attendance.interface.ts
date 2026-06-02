@@ -1,5 +1,4 @@
-export enum AttendanceStatus {
-}
+export enum AttendanceStatus {}
 
 export interface Attendance {
   id: number;
@@ -10,4 +9,3 @@ export interface Attendance {
   created_at: Date;
   updated_at: Date;
 }
-

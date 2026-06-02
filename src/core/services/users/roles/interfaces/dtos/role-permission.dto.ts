@@ -1,6 +1,6 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { PaginationDto } from '../../../../common';
 
 export class CreateRolePermissionRequestDto {
   @ApiProperty({ description: 'The ID of the role' })
@@ -10,7 +10,9 @@ export class CreateRolePermissionRequestDto {
   permission_id: number;
 }
 
-export class UpdateRolePermissionRequestDto extends PartialType(CreateRolePermissionRequestDto) {}
+export class UpdateRolePermissionRequestDto extends PartialType(
+  CreateRolePermissionRequestDto,
+) {}
 
 export class RolePermissionResponseDto {
   @ApiProperty()

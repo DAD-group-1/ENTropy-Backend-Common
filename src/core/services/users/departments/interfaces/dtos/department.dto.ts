@@ -1,6 +1,6 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 // Create Request
 export class CreateDepartmentRequestDto {
@@ -8,7 +8,9 @@ export class CreateDepartmentRequestDto {
   name: string;
 }
 
-export class UpdateDepartmentRequestDto extends PartialType(CreateDepartmentRequestDto) {}
+export class UpdateDepartmentRequestDto extends PartialType(
+  CreateDepartmentRequestDto,
+) {}
 
 export class DepartmentResponseDto {
   @ApiProperty()

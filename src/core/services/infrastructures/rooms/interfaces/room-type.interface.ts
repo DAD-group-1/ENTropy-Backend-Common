@@ -3,4 +3,3 @@ export interface RoomType {
   campus_id: number;
   name: string;
 }
-

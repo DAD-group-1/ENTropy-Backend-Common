@@ -1,6 +1,6 @@
-import {ApiProperty, PartialType} from '@nestjs/swagger';
-import {Exclude} from 'class-transformer';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateUserRequestDto {
   @ApiProperty({ description: 'The first name of the user' })

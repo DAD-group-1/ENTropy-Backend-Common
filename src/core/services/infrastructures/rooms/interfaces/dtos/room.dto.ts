@@ -1,7 +1,7 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {RoomStatus} from '../room.interface';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { RoomStatus } from '../room.interface';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateRoomRequestDto {
   @ApiProperty({ description: 'The name of the room' })
@@ -76,4 +76,3 @@ export class DeleteRoomRequestDto {
 // Keep backward compatibility
 export class CreateRoomDto extends CreateRoomRequestDto {}
 export class UpdateRoomDto extends UpdateRoomRequestDto {}
-

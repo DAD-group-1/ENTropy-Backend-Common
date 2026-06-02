@@ -16,4 +16,3 @@ export interface Program {
   created_at: Date;
   updated_at: Date;
 }
-

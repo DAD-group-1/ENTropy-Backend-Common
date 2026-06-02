@@ -1,13 +1,15 @@
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreatePaymentMethodRequestDto {
   @ApiProperty({ description: 'The name of the payment method' })
   name: string;
 }
 
-export class UpdatePaymentMethodRequestDto extends PartialType(CreatePaymentMethodRequestDto) {}
+export class UpdatePaymentMethodRequestDto extends PartialType(
+  CreatePaymentMethodRequestDto,
+) {}
 
 export class PaymentMethodResponseDto {
   @ApiProperty()

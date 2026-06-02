@@ -1,7 +1,7 @@
-import {CourseStatus} from '../course.interface';
-import {ApiProperty} from '@nestjs/swagger';
-import {PartialType} from '@nestjs/mapped-types';
-import {PaginationDto} from "../../../../common/dtos/pagination.dto";
+import { CourseStatus } from '../course.interface';
+import { ApiProperty } from '@nestjs/swagger';
+import { PartialType } from '@nestjs/mapped-types';
+import { PaginationDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateCourseRequestDto {
   @ApiProperty({ description: 'The name of the course' })
@@ -32,7 +32,9 @@ export class CreateCourseRequestDto {
   status: CourseStatus;
 }
 
-export class UpdateCourseRequestDto extends PartialType(CreateCourseRequestDto) {}
+export class UpdateCourseRequestDto extends PartialType(
+  CreateCourseRequestDto,
+) {}
 
 export class CourseResponseDto {
   @ApiProperty()
