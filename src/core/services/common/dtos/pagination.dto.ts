@@ -60,7 +60,7 @@ export class PaginationDto<T> {
 
 export class PaginationQueryDto {
   @ApiProperty({ example: 1, required: false, type: 'integer', minimum: 1 })
-  page?: number = 1;
+  page: number = 1;
 
   @ApiProperty({
     example: 10,
@@ -69,5 +69,5 @@ export class PaginationQueryDto {
     minimum: 1,
     maximum: 100,
   })
-  limit?: number = 10;
+  limit: number = 10;
 }
