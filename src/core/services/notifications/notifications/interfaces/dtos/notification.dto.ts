@@ -61,7 +61,7 @@ export class NotificationResponseDto {
 /**
  * GET ONE / GET MANY RESPONSE DTO
  */
-export class GetNotificationResponseDto extends GlobalResponseDto<NotificationResponseDto> {}
+export class GetNotificationResponseDto extends NotificationResponseDto {}
 
 /**
  * DELETE RESPONSE DTO
