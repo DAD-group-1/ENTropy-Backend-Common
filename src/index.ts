@@ -1,5 +1,6 @@
 export * from './core/database-modules';
 export * from './core/logger-utils';
+export * from './core/services/globalResponseDto';
 
 // Attendance Microservice
 export * from './core/services/attendances';
