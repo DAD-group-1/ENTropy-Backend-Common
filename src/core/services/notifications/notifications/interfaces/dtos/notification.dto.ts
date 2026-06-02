@@ -1,4 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { GlobalResponseDto } from '../../../../globalResponseDto';
 
 /**
  * CREATE
@@ -33,7 +34,7 @@ export class UpdateNotificationDto {
  */
 export class NotificationResponseDto {
   @ApiProperty()
-  id: number;
+  _id: number;
 
   @ApiProperty()
   user_id: number;
@@ -45,16 +46,22 @@ export class NotificationResponseDto {
   message: string;
 
   @ApiProperty()
-  created_at: Date;
+  read_at: Date;
 
   @ApiProperty()
-  read_at: Date;
+  createdAt: Date;
+
+  @ApiProperty()
+  updatedAt: Date;
+
+  @ApiProperty()
+  _v: number;
 }
 
 /**
  * GET ONE / GET MANY RESPONSE DTO
  */
-export class GetNotificationResponseDto extends NotificationResponseDto {}
+export class GetNotificationResponseDto extends GlobalResponseDto<NotificationResponseDto> {}
 
 /**
  * DELETE RESPONSE DTO
