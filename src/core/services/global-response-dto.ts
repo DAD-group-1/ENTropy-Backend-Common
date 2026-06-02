@@ -6,11 +6,13 @@ export class GlobalResponseDto<T> {
 
   @ApiPropertyOptional({
     description: 'The error message, if the operation failed',
+    nullable: true,
   })
-  error?: string;
+  error?: string | null;
 
   @ApiPropertyOptional({
     description: 'The data returned from the operation, if any',
+    nullable: true,
   })
-  data?: T;
+  data?: T | null;
 }
