@@ -1,5 +1,4 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { GlobalResponseDto } from '../../../../globalResponseDto';
 
 /**
  * CREATE

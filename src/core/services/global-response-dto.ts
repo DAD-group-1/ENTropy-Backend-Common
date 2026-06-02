@@ -14,5 +14,5 @@ export class GlobalResponseDto<T> {
     description: 'The data returned from the operation, if any',
     nullable: true,
   })
-  data?: T | null;
+  data?: T;
 }

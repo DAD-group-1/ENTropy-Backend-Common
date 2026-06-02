@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
+import { GlobalResponseDto } from '../../../../global-response-dto';
 
 export class LoginRequestDto {
   @ApiProperty({ description: 'The email address of the account' })
