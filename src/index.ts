@@ -11,7 +11,7 @@ export * from './core/services/billing';
 export * from './core/services/courses';
 
 // Enrollment Microservice
-export * from './core/services/enrollment';
+export * from './core/services/enrollments';
 
 // Infrastructure Microservice
 export * from './core/services/infrastructures';
