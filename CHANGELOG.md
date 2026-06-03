@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.39](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.38...v0.1.39) (2026-06-03)
+
 ### [0.1.38](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.37...v0.1.38) (2026-06-03)
 
 ### [0.1.37](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.36...v0.1.37) (2026-06-03)
