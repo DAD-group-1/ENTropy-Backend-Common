@@ -1,4 +1,8 @@
-export enum RoomStatus {}
+export enum RoomStatus {
+    BOOKED = 'Booked',
+    AVAILABLE = 'Available',
+    Unavailable = 'Unavailable',
+}
 
 export interface Room {
   id: number;
