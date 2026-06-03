@@ -71,3 +71,16 @@ export class PaginationQueryDto {
   })
   limit: number = 10;
 }
+
+export class SearchPaginationQueryDto {
+  @ApiProperty({
+    description: 'Identifier',
+    example: 1,
+  })
+  id: number;
+
+  @ApiProperty({
+    description: 'Pagination query',
+  })
+  query: PaginationQueryDto;
+}
