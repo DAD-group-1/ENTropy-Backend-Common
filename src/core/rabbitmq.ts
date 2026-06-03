@@ -20,7 +20,10 @@ export function createRabbitMQConfig(
   };
 }
 
-const createRMQClientModule = (name: string, queue: string): DynamicModule =>
+export const createRMQClientModule = (
+  name: string,
+  queue: string,
+): DynamicModule =>
   ClientsModule.registerAsync([
     {
       name: name,
