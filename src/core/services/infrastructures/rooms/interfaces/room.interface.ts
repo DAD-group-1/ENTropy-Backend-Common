@@ -1,7 +1,7 @@
 export enum RoomStatus {
     BOOKED = 'Booked',
     AVAILABLE = 'Available',
-    Unavailable = 'Unavailable',
+    UNAVAILABLE = 'Unavailable',
 }
 
 export interface Room {
