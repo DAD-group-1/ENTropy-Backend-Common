@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { RoomStatus } from '../interfaces/room.interface';
 
 @Entity()
@@ -21,8 +21,8 @@ export class InternalRoom {
   equipement: string;
   @Column()
   status: RoomStatus;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

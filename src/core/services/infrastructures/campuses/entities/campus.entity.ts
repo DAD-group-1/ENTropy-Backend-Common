@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { CampusStatus } from '../interfaces/campus.interface';
 
 @Entity()
@@ -27,8 +27,8 @@ export class InternalCampus {
   opening_date: Date;
   @Column()
   status: CampusStatus;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

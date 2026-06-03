@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { PaymentStatus } from '../interfaces/payment.interface';
 
 @Entity()
@@ -25,8 +25,8 @@ export class InternalPayment {
   semester: any;
   @Column()
   notes: string;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

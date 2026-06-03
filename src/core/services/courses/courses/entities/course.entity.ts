@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from 'typeorm';
 import { CourseStatus } from '../interfaces/course.interface';
 
 @Entity()
@@ -23,8 +23,8 @@ export class InternalCourse {
   room_id: number;
   @Column()
   status: CourseStatus = CourseStatus.ACTIVE;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

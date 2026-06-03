@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { AttendanceStatus } from '../interfaces/attendance.interface';
 
 @Entity()
@@ -13,8 +13,8 @@ export class InternalAttendance {
   status: AttendanceStatus;
   @Column()
   note: string;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

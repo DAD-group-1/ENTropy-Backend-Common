@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { ProgramStatus } from '../interfaces/program.interface';
 
 @Entity()
@@ -21,8 +21,8 @@ export class InternalProgram {
   max_students: number;
   @Column()
   status: ProgramStatus;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }

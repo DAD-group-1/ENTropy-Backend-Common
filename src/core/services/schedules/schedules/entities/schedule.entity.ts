@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
 import { ScheduleStatus } from '../interfaces/schedule.interface';
 
 @Entity()
@@ -25,8 +25,8 @@ export class InternalSchedule {
   status: ScheduleStatus;
   @Column()
   last_modified: Date;
-  @Column()
+  @CreateDateColumn()
   created_at: Date;
-  @Column()
+  @UpdateDateColumn()
   updated_at: Date;
 }
