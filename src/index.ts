@@ -1,6 +1,7 @@
 export * from './core/database-modules';
 export * from './core/logger-utils';
 export * from './core/services/global-response-dto';
+export * from './core/rabbitmq';
 
 // Common
 export * from './core/services/common';
