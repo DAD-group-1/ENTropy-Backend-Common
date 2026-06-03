@@ -1,5 +1,5 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateRoleRequestDto {
   @ApiProperty({ description: 'The name of the role' })
@@ -22,7 +22,9 @@ export class RoleResponseDto {
   description: string;
 }
 
-export class RoleListResponseDto extends PaginationDto<RoleResponseDto> {}
+export class RoleListResponseDto extends PaginatedResponseDto(
+  RoleResponseDto,
+) {}
 
 export class DeleteRoleRequestDto {
   @ApiProperty()

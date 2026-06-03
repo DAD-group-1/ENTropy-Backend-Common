@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { PaymentStatus } from '../payment.interface';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreatePaymentRequestDto {
   @ApiProperty({ description: 'The ID of the student' })
@@ -81,7 +81,9 @@ export class PaymentResponseDto {
   updated_at: Date;
 }
 
-export class PaymentListResponseDto extends PaginationDto<PaymentResponseDto> {}
+export class PaymentListResponseDto extends PaginatedResponseDto(
+  PaymentResponseDto,
+) {}
 
 export class DeletePaymentRequestDto {
   @ApiProperty()

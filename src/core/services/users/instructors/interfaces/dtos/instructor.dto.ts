@@ -4,7 +4,7 @@ import {
   CreateUserRequestDto,
   UserResponseDto,
 } from '../../../users/interfaces/dtos/user.dto';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateInstructorRequestDto extends CreateUserRequestDto {
   @ApiProperty({
@@ -46,7 +46,9 @@ export class InstructorResponseDto {
   specialization_id: number;
 }
 
-export class InstructorListResponseDto extends PaginationDto<InstructorResponseDto> {}
+export class InstructorListResponseDto extends PaginatedResponseDto(
+  InstructorResponseDto,
+) {}
 
 export class DeleteInstructorRequestDto {
   @ApiProperty()

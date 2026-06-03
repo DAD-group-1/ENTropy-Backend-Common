@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { EnrollmentStatus } from '../enrollment.interface';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateEnrollmentRequestDto {
   @ApiProperty({ description: 'The ID of the student' })
@@ -56,7 +56,9 @@ export class EnrollmentResponseDto {
   updated_at: Date;
 }
 
-export class EnrollmentListResponseDto extends PaginationDto<EnrollmentResponseDto> {}
+export class EnrollmentListResponseDto extends PaginatedResponseDto(
+  EnrollmentResponseDto,
+) {}
 
 export class DeleteEnrollmentRequestDto {
   @ApiProperty()

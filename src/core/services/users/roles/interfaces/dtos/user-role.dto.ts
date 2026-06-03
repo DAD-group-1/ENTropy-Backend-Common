@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateUserRoleRequestDto {
   @ApiProperty({ description: 'The ID of the user' })
@@ -22,7 +22,9 @@ export class UserRoleResponseDto {
   role_id: number;
 }
 
-export class UserRoleListResponseDto extends PaginationDto<UserRoleResponseDto> {}
+export class UserRoleListResponseDto extends PaginatedResponseDto(
+  UserRoleResponseDto,
+) {}
 
 export class DeleteUserRoleRequestDto {
   @ApiProperty()

@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 /**
  * CREATE
@@ -66,7 +66,9 @@ export class GetNotificationResponseDto extends NotificationResponseDto {}
 /**
  * GET ONE / GET MANY RESPONSE LIST DTO
  */
-export class GetNotificationListResponseDto extends PaginationDto<GetNotificationResponseDto> {}
+export class GetNotificationListResponseDto extends PaginatedResponseDto(
+  GetNotificationResponseDto,
+) {}
 
 /**
  * DELETE RESPONSE DTO

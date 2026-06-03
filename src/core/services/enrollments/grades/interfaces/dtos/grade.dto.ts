@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateGradeRequestDto {
   @ApiProperty({ description: 'The ID of the enrollment' })
@@ -29,7 +29,9 @@ export class GradeResponseDto {
   name: string;
 }
 
-export class GradeListResponseDto extends PaginationDto<GradeResponseDto> {}
+export class GradeListResponseDto extends PaginatedResponseDto(
+  GradeResponseDto,
+) {}
 
 export class DeleteGradeRequestDto {
   @ApiProperty()

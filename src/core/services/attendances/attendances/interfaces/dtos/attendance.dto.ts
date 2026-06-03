@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { AttendanceStatus } from '../attendance.interface';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 // Create Request
 export class CreateAttendanceRequestDto {
@@ -45,7 +45,9 @@ export class AttendanceResponseDto {
   updated_at: Date;
 }
 
-export class AttendanceListResponseDto extends PaginationDto<AttendanceResponseDto> {}
+export class AttendanceListResponseDto extends PaginatedResponseDto(
+  AttendanceResponseDto,
+) {}
 
 export class DeleteAttendanceRequestDto {
   @ApiProperty()

@@ -1,7 +1,7 @@
 import { CourseStatus } from '../course.interface';
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateCourseRequestDto {
   @ApiProperty({ description: 'The name of the course' })
@@ -74,7 +74,9 @@ export class CourseResponseDto {
   updated_at: Date;
 }
 
-export class CourseListResponseDto extends PaginationDto<CourseResponseDto> {}
+export class CourseListResponseDto extends PaginatedResponseDto(
+  CourseResponseDto,
+) {}
 
 export class DeleteCourseRequestDto {
   @ApiProperty()

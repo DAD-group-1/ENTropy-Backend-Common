@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaginationDto } from '../../../../common';
+import { PaginatedResponseDto } from '../../../../common';
 
 export class CreateRolePermissionRequestDto {
   @ApiProperty({ description: 'The ID of the role' })
@@ -22,7 +22,9 @@ export class RolePermissionResponseDto {
   permission_id: number;
 }
 
-export class RolePermissionListResponseDto extends PaginationDto<RolePermissionResponseDto> {}
+export class RolePermissionListResponseDto extends PaginatedResponseDto(
+  RolePermissionResponseDto,
+) {}
 
 export class DeleteRolePermissionRequestDto {
   @ApiProperty()

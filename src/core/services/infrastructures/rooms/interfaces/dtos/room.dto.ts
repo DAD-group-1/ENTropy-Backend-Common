@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { RoomStatus } from '../room.interface';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateRoomRequestDto {
   @ApiProperty({ description: 'The name of the room' })
@@ -66,7 +66,9 @@ export class RoomResponseDto {
   updated_at: Date;
 }
 
-export class RoomListResponseDto extends PaginationDto<RoomResponseDto> {}
+export class RoomListResponseDto extends PaginatedResponseDto(
+  RoomResponseDto,
+) {}
 
 export class DeleteRoomRequestDto {
   @ApiProperty()

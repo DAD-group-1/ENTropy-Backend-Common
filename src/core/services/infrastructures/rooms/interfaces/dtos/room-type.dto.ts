@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateRoomTypeRequestDto {
   @ApiProperty({ description: 'The name of the room type' })
@@ -25,7 +25,9 @@ export class RoomTypeResponseDto {
   name: string;
 }
 
-export class RoomTypeListResponseDto extends PaginationDto<RoomTypeResponseDto> {}
+export class RoomTypeListResponseDto extends PaginatedResponseDto(
+  RoomTypeResponseDto,
+) {}
 
 export class DeleteRoomTypeRequestDto {
   @ApiProperty()

@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateUserRequestDto {
   @ApiProperty({ description: 'The first name of the user' })
@@ -62,7 +62,9 @@ export class UserResponseDto {
   updated_at: Date;
 }
 
-export class UserListResponseDto extends PaginationDto<UserResponseDto> {}
+export class UserListResponseDto extends PaginatedResponseDto(
+  UserResponseDto,
+) {}
 
 export class DeleteUserRequestDto {
   @ApiProperty()

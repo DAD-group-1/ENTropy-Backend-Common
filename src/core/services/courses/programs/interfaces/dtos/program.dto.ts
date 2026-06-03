@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { ProgramStatus } from '../program.interface';
-import { PaginationDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 
 export class CreateProgramRequestDto {
   @ApiProperty({ description: 'The name of the program' })
@@ -71,7 +71,9 @@ export class ProgramResponseDto {
   updated_at: Date;
 }
 
-export class ProgramListResponseDto extends PaginationDto<ProgramResponseDto> {}
+export class ProgramListResponseDto extends PaginatedResponseDto(
+  ProgramResponseDto,
+) {}
 
 export class DeleteProgramRequestDto {
   @ApiProperty()
