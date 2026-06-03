@@ -7,7 +7,7 @@ export interface Enrollment {
   id: number;
   student_id: number;
   course_id: number;
-  semester: any;
+  semester: number;
   academic_year: number;
   status: EnrollmentStatus;
   enrollment_date: Date;

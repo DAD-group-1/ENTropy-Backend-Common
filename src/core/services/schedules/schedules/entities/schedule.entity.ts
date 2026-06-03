@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
 import { ScheduleStatus } from '../interfaces/schedule.interface';
 
 @Entity()
@@ -18,9 +18,9 @@ export class InternalSchedule {
   @Column()
   end_date: Date;
   @Column()
-  semester: any;
+  semester: number;
   @Column()
-  academic_year: any;
+  academic_year: number;
   @Column()
   status: ScheduleStatus;
   @Column()

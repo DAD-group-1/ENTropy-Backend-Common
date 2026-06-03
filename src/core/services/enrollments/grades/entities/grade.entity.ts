@@ -7,7 +7,7 @@ export class InternalGrade {
   @Column()
   enrollment_id: number;
   @Column()
-  grade: any;
+  grade: number;
   @Column()
   name: string;
 }

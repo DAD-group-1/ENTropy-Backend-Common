@@ -5,7 +5,7 @@ export interface Room {
   name: string;
   campus_id: number;
   building_id: number;
-  floor: any;
+  floor: number;
   capacity: number;
   room_type_id: number;
   equipement: string;

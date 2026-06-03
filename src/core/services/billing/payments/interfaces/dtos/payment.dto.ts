@@ -14,7 +14,7 @@ export class CreatePaymentRequestDto {
   due_date: Date;
 
   @ApiProperty({ description: 'The payment amount' })
-  amount: any;
+  amount: number;
 
   @ApiProperty({ description: 'The payment status', enum: PaymentStatus })
   status: PaymentStatus;
@@ -29,7 +29,7 @@ export class CreatePaymentRequestDto {
   academic_year: number;
 
   @ApiProperty({ description: 'The semester' })
-  semester: any;
+  semester: number;
 
   @ApiProperty({ description: 'Additional notes about the payment' })
   notes?: string;
@@ -54,7 +54,7 @@ export class PaymentResponseDto {
   due_date: Date;
 
   @ApiProperty()
-  amount: any;
+  amount: number;
 
   @ApiProperty()
   status: PaymentStatus;
@@ -69,7 +69,7 @@ export class PaymentResponseDto {
   academic_year: number;
 
   @ApiProperty()
-  semester: any;
+  semester: number;
 
   @ApiProperty()
   notes: string;

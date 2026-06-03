@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { RoomStatus } from '../interfaces/room.interface';
 
 @Entity()
@@ -12,7 +18,7 @@ export class InternalRoom {
   @Column()
   building_id: number;
   @Column()
-  floor: any;
+  floor: number;
   @Column()
   capacity: number;
   @Column()

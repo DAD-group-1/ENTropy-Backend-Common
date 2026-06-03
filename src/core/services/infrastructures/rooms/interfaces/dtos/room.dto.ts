@@ -14,7 +14,7 @@ export class CreateRoomRequestDto {
   building_id: number;
 
   @ApiProperty({ description: 'The floor number' })
-  floor: any;
+  floor: number;
 
   @ApiProperty({ description: 'The seating capacity of the room' })
   capacity: number;
@@ -45,7 +45,7 @@ export class RoomResponseDto {
   building_id: number;
 
   @ApiProperty()
-  floor: any;
+  floor: number;
 
   @ApiProperty()
   capacity: number;

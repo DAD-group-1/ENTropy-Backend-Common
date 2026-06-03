@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { EnrollmentStatus } from '../interfaces/enrollment.interface';
 
 @Entity()
@@ -10,7 +16,7 @@ export class InternalEnrollment {
   @Column()
   course_id: number;
   @Column()
-  semester: any;
+  semester: number;
   @Column()
   academic_year: number;
   @Column()

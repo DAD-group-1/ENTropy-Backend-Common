@@ -23,10 +23,10 @@ export class CreateScheduleRequestDto {
   end_date: Date;
 
   @ApiProperty({ description: 'The semester' })
-  semester: any;
+  semester: number;
 
   @ApiProperty({ description: 'The academic year' })
-  academic_year: any;
+  academic_year: number;
 
   @ApiProperty({ description: 'The schedule status', enum: ScheduleStatus })
   status: ScheduleStatus;
@@ -59,10 +59,10 @@ export class ScheduleResponseDto {
   end_date: Date;
 
   @ApiProperty()
-  semester: any;
+  semester: number;
 
   @ApiProperty()
-  academic_year: any;
+  academic_year: number;
 
   @ApiProperty()
   status: ScheduleStatus;

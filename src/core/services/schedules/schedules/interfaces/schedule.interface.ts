@@ -8,8 +8,8 @@ export interface Schedule {
   room_id: number;
   start_date: Date;
   end_date: Date;
-  semester: any;
-  academic_year: any;
+  semester: number;
+  academic_year: number;
   status: ScheduleStatus;
   last_modified: Date;
   created_at: Date;

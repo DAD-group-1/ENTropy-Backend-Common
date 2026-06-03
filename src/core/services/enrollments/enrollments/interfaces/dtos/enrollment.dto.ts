@@ -11,7 +11,7 @@ export class CreateEnrollmentRequestDto {
   course_id: number;
 
   @ApiProperty({ description: 'The semester' })
-  semester: any;
+  semester: number;
 
   @ApiProperty({ description: 'The academic year' })
   academic_year: number;
@@ -38,7 +38,7 @@ export class EnrollmentResponseDto {
   course_id: number;
 
   @ApiProperty()
-  semester: any;
+  semester: number;
 
   @ApiProperty()
   academic_year: number;
