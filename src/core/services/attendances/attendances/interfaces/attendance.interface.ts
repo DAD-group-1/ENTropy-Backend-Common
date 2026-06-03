@@ -1,4 +1,9 @@
-export enum AttendanceStatus {}
+export enum AttendanceStatus {
+  PRESENT = 'PRESENT',
+  ABSENT = 'ABSENT',
+  LATE = 'LATE',
+  EXCUSED = 'EXCUSED',
+}
 
 export interface Attendance {
   id: number;
