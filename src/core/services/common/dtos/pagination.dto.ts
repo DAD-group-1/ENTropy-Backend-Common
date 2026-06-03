@@ -15,6 +15,12 @@ export class PaginationDto {
   @ApiProperty({ example: 10 })
   limit: number;
 
+  constructor(total: number, page: number, limit: number) {
+    this.total = total;
+    this.page = page;
+    this.limit = limit;
+  }
+
   get totalPages(): number {
     return Math.ceil(this.total / this.limit);
   }
@@ -32,6 +38,11 @@ export function PaginatedResponseDto<T>(classRef: Type<T>) {
   class PaginatedDto extends PaginationDto {
     @ApiProperty({ isArray: true, type: () => classRef })
     items: T[];
+
+    constructor(items: T[], total: number, page: number, limit: number) {
+      super(total, page, limit);
+      this.items = items;
+    }
   }
 
   return PaginatedDto;
