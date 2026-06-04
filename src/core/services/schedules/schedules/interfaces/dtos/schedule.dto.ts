@@ -1,5 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { ScheduleStatus } from '../schedule.interface';
 import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 

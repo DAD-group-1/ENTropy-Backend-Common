@@ -1,5 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
+import { ApiProperty, PartialType} from '@nestjs/swagger';
 import { PaymentStatus } from '../payment.interface';
 import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
 

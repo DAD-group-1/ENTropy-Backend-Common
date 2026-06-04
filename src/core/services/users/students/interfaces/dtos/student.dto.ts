@@ -5,7 +5,7 @@ import {
   CreateUserRequestDto,
   UserResponseDto,
 } from '../../../users/interfaces/dtos/user.dto';
-import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common';
 
 export class CreateStudentRequestDto extends CreateUserRequestDto {
   @ApiProperty({
