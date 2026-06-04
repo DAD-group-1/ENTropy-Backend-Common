@@ -26,6 +26,9 @@ export class UpdateNotificationDto {
   message?: string;
 
   @ApiPropertyOptional()
+  target_url?: string;
+
+  @ApiPropertyOptional()
   read_at?: Date;
 }
 
@@ -45,8 +48,11 @@ export class NotificationResponseDto {
   @ApiProperty()
   message: string;
 
-  @ApiProperty()
-  read_at: Date;
+  @ApiPropertyOptional()
+  target_url?: string;
+
+  @ApiPropertyOptional()
+  read_at?: Date;
 
   @ApiProperty()
   createdAt: Date;
