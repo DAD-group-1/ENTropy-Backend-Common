@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { AttendanceStatus } from '../interfaces/attendance.interface';
 
 @Entity()
@@ -11,7 +17,7 @@ export class InternalAttendance {
   student_id: number;
   @Column()
   status: AttendanceStatus;
-  @Column('number', { nullable: true })
+  @Column('varchar', { nullable: true })
   note: string | true;
   @CreateDateColumn()
   created_at: Date;
