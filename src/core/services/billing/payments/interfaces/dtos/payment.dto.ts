@@ -1,6 +1,6 @@
-import { ApiProperty, PartialType} from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { PaymentStatus } from '../payment.interface';
-import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common';
 
 export class CreatePaymentRequestDto {
   @ApiProperty({ description: 'The ID of the student' })
@@ -18,8 +18,8 @@ export class CreatePaymentRequestDto {
   @ApiProperty({ description: 'The payment status', enum: PaymentStatus })
   status: PaymentStatus;
 
-  @ApiProperty({ description: 'The actual payment date' })
-  payment_date: Date;
+  @ApiProperty({ description: 'The actual payment date', nullable: true })
+  payment_date: Date | null;
 
   @ApiProperty({ description: 'The ID of the payment method' })
   payment_method_id: number;
@@ -58,8 +58,8 @@ export class PaymentResponseDto {
   @ApiProperty()
   status: PaymentStatus;
 
-  @ApiProperty()
-  payment_date: Date;
+  @ApiProperty({ nullable: true })
+  payment_date: Date | null;
 
   @ApiProperty()
   payment_method_id: number;
