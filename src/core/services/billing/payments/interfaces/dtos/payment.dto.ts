@@ -19,7 +19,7 @@ export class CreatePaymentRequestDto {
   status: PaymentStatus;
 
   @ApiProperty({ description: 'The actual payment date', nullable: true })
-  payment_date?: Date;
+  payment_date: Date;
 
   @ApiProperty({ description: 'The ID of the payment method' })
   payment_method_id: number;
@@ -59,7 +59,7 @@ export class PaymentResponseDto {
   status: PaymentStatus;
 
   @ApiProperty({ nullable: true })
-  payment_date?: Date;
+  payment_date: Date;
 
   @ApiProperty()
   payment_method_id: number;
