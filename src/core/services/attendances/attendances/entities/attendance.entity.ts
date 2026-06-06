@@ -17,8 +17,8 @@ export class InternalAttendance {
   student_id: number;
   @Column()
   status: AttendanceStatus;
-  @Column()
-  note: string;
+  @Column({ nullable: true })
+  note: string | true;
   @CreateDateColumn()
   created_at: Date;
   @UpdateDateColumn()
