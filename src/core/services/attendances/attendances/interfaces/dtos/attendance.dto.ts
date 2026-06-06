@@ -17,7 +17,7 @@ export class CreateAttendanceRequestDto {
     description: 'Optional note about attendance',
     nullable: true,
   })
-  note: string | null;
+  note?: string;
 }
 
 export class UpdateAttendanceRequestDto extends PartialType(
@@ -38,7 +38,7 @@ export class AttendanceResponseDto {
   status: AttendanceStatus;
 
   @ApiProperty({ nullable: true })
-  note: string | null;
+  note?: string;
 
   @ApiProperty()
   created_at: Date;

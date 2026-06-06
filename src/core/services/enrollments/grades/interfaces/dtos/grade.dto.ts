@@ -6,7 +6,7 @@ export class CreateGradeRequestDto {
   enrollment_id: number;
 
   @ApiProperty({ description: 'The grade value', nullable: true })
-  grade: number | null;
+  grade?: number;
 
   @ApiProperty({ description: 'The name of the grade' })
   name: string;
@@ -22,7 +22,7 @@ export class GradeResponseDto {
   enrollment_id: number;
 
   @ApiProperty({ nullable: true })
-  grade: number | null;
+  grade?: number;
 
   @ApiProperty()
   name: string;
