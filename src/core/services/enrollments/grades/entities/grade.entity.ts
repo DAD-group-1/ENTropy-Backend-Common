@@ -6,7 +6,7 @@ export class InternalGrade {
   id: number;
   @Column()
   enrollment_id: number;
-  @Column({ nullable: true })
+  @Column('number', { nullable: true })
   grade: number | null;
   @Column()
   name: string;
