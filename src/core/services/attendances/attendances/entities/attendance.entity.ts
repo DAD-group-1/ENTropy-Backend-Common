@@ -18,7 +18,7 @@ export class InternalAttendance {
   @Column()
   status: AttendanceStatus;
   @Column('varchar', { nullable: true })
-  note: string | true;
+  note: string | null;
   @CreateDateColumn()
   created_at: Date;
   @UpdateDateColumn()
