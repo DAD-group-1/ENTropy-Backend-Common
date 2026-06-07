@@ -25,6 +25,8 @@ export class InternalUser {
   @Column('date')
   birthday: Date;
   @Column()
+  role_id: number;
+  @Column()
   campus_id: number;
   @Column()
   is_active: boolean = true;
