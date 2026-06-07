@@ -1,6 +1,7 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import {RoleResponseDto} from "../../../roles/interfaces/dtos/role.dto";
 
 export class CreateUserRequestDto {
   @ApiProperty({ description: 'The first name of the user' })
@@ -15,6 +16,9 @@ export class CreateUserRequestDto {
   @ApiProperty({ description: "The password for the user's account" })
   @Exclude()
   password: string;
+
+  @ApiProperty({ description: 'The ID of the role assigned to the user' })
+  role_id: number;
 
   @ApiProperty({ description: 'The phone number of the user' })
   phone: string;
@@ -45,6 +49,9 @@ export class UserResponseDto {
 
   @ApiProperty()
   phone: string;
+
+  @ApiProperty()
+  role: RoleResponseDto;
 
   @ApiProperty()
   birthday: Date;
