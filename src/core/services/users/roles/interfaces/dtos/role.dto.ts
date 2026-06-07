@@ -37,8 +37,6 @@ export class AssignRoleRequestDto{
     role_id: number;
 }
 
-export class AssignRoleResponseDto extends UserResponseDto {}
-
 // Keep backward compatibility
 export class CreateRoleDto extends CreateRoleRequestDto {}
 export class UpdateRoleDto extends UpdateRoleRequestDto {}
