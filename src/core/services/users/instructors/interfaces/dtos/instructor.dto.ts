@@ -2,6 +2,8 @@ import { InstructorStatus } from '../instructor.interface';
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateUserRequestDto, UserResponseDto, } from '../../../users/interfaces/dtos/user.dto';
 import { PaginatedResponseDto } from '../../../../common';
+import { DepartmentResponseDto } from '../../../departments/interfaces/dtos/department.dto';
+import { SpecializationResponseDto } from '../../../specializations/interfaces/dtos/specialization.dto';
 
 export class CreateInstructorRequestDto extends CreateUserRequestDto {
   @ApiProperty({
@@ -27,6 +29,12 @@ export class UpdateInstructorRequestDto extends PartialType(
 ) {}
 
 export class InstructorResponseDto {
+  @ApiProperty()
+  department: DepartmentResponseDto;
+
+  @ApiProperty()
+  specialization: SpecializationResponseDto;
+
   @ApiProperty()
   user: UserResponseDto;
 
