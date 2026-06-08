@@ -18,7 +18,12 @@ export class CreatePaymentRequestDto {
   @ApiProperty({ description: 'The payment status', enum: PaymentStatus })
   status: PaymentStatus;
 
-  @ApiProperty({ description: 'The actual payment date', nullable: true })
+  @ApiProperty({
+    description: 'The actual payment date',
+    nullable: true,
+    type: 'string',
+    format: 'date-time',
+  })
   payment_date: Date | null;
 
   @ApiProperty({ description: 'The ID of the payment method' })
@@ -58,7 +63,7 @@ export class PaymentResponseDto {
   @ApiProperty()
   status: PaymentStatus;
 
-  @ApiProperty({ nullable: true })
+  @ApiProperty({ nullable: true, type: 'string', format: 'date-time' })
   payment_date: Date | null;
 
   @ApiProperty()
