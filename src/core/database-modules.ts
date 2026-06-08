@@ -2,7 +2,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DynamicModule } from '@nestjs/common';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import SnakeNamingStrategy from 'typeorm-naming-strategy';
 
 type DbType = DataSourceOptions['type'];
 
@@ -26,7 +25,6 @@ export const createDatabaseModule = (): DynamicModule =>
         database: configService.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: false,
-        namingStrategy: new SnakeNamingStrategy(),
       }) as DataSourceOptions,
   });
 
@@ -46,5 +44,4 @@ export const createDatabase = (): DataSource =>
     database: process.env.DB_NAME || 'entropy_users_db',
     entities: ['src/**/*.entity{.ts,.js}'],
     migrations: ['src/database/migrations/*{.ts,.js}'],
-    namingStrategy: new SnakeNamingStrategy(),
   } as DataSourceOptions);
