@@ -1,6 +1,6 @@
 {
   "name": "@dad-group-1/backend-common",
-  "version": "0.1.67",
+  "version": "0.1.68",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
