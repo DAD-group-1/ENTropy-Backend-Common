@@ -1,7 +1,8 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
-import {RoleResponseDto} from "../../../roles/interfaces/dtos/role.dto";
+import { RoleResponseDto } from '../../../roles/interfaces/dtos/role.dto';
+import { CampusResponseDto } from '../../../../infrastructures';
 
 export class CreateUserRequestDto {
   @ApiProperty({ description: 'The first name of the user' })
@@ -35,6 +36,9 @@ export class CreateUserRequestDto {
 export class UpdateUserRequestDto extends PartialType(CreateUserRequestDto) {}
 
 export class UserResponseDto {
+  @ApiProperty()
+  campus: CampusResponseDto;
+
   @ApiProperty()
   id: number;
 

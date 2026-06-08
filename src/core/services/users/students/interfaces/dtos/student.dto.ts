@@ -6,6 +6,7 @@ import {
   UserResponseDto,
 } from '../../../users/interfaces/dtos/user.dto';
 import { PaginatedResponseDto } from '../../../../common';
+import { ProgramResponseDto } from '../../../../courses';
 
 export class CreateStudentRequestDto extends CreateUserRequestDto {
   @ApiProperty({
@@ -47,6 +48,9 @@ export class UpdateStudentRequestDto extends PartialType(
 ) {}
 
 export class StudentResponseDto {
+  @ApiProperty()
+  program: ProgramResponseDto;
+
   @ApiProperty()
   user: UserResponseDto;
 
