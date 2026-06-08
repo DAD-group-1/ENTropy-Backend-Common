@@ -1,10 +1,4 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn, } from 'typeorm';
 import { PaymentStatus } from '../interfaces/payment.interface';
 
 @Entity()
@@ -21,8 +15,8 @@ export class InternalPayment {
   amount: number;
   @Column()
   status: PaymentStatus;
-  @Column()
-  payment_date: Date;
+  @Column('date', { nullable: true })
+  payment_date: Date | null;
   @Column()
   payment_method_id: number;
   @Column()

@@ -1,13 +1,12 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { PartialType } from '@nestjs/mapped-types';
-import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
+import { PaginatedResponseDto } from '../../../../common';
 
 export class CreateGradeRequestDto {
   @ApiProperty({ description: 'The ID of the enrollment' })
   enrollment_id: number;
 
-  @ApiProperty({ description: 'The grade value' })
-  grade: number;
+  @ApiProperty({ description: 'The grade value', nullable: true })
+  grade: number | null;
 
   @ApiProperty({ description: 'The name of the grade' })
   name: string;
@@ -22,8 +21,8 @@ export class GradeResponseDto {
   @ApiProperty()
   enrollment_id: number;
 
-  @ApiProperty()
-  grade: number;
+  @ApiProperty({ nullable: true })
+  grade: number | null;
 
   @ApiProperty()
   name: string;

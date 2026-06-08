@@ -1,34 +1,43 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import {ApiProperty, ApiPropertyOptional} from '@nestjs/swagger';
+import {PaginatedResponseDto} from '../../../../common';
 
 /**
  * CREATE
  */
 export class CreateNotificationDto {
-  @ApiProperty({ description: 'The id of the user to notify' })
+  @ApiProperty({ description: 'ID of the user to notify' })
   user_id: number;
 
-  @ApiProperty({ description: 'The title of the notification' })
+  @ApiProperty({ description: 'Title of the notification' })
   title: string;
 
-  @ApiProperty({ description: 'The message of the notification' })
+  @ApiProperty({ description: 'Message content of the notification' })
   message: string;
+
+  @ApiPropertyOptional({
+    description: 'Target URL associated with the notification',
+  })
+  target_url?: string;
 }
 
 /**
  * UPDATE
  */
 export class UpdateNotificationDto {
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ description: 'Title of the notification' })
   title?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ description: 'Message content of the notification' })
   message?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'Target URL associated with the notification',
+  })
   target_url?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'Timestamp when the notification was read (null if unread)',
+  })
   read_at?: Date;
 }
 
@@ -36,31 +45,37 @@ export class UpdateNotificationDto {
  * BASE RESPONSE (notification entity shape)
  */
 export class NotificationResponseDto {
-  @ApiProperty()
+  @ApiProperty({ description: 'Unique identifier of the notification' })
   _id: number;
 
-  @ApiProperty()
+  @ApiProperty({ description: 'ID of the user who owns the notification' })
   user_id: number;
 
-  @ApiProperty()
+  @ApiProperty({ description: 'Title of the notification' })
   title: string;
 
-  @ApiProperty()
+  @ApiProperty({ description: 'Message content of the notification' })
   message: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'Target URL associated with the notification',
+  })
   target_url?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    description: 'Timestamp when the notification was read (null if unread)',
+  })
   read_at?: Date;
 
-  @ApiProperty()
+  @ApiProperty({ description: 'Creation timestamp of the notification' })
   createdAt: Date;
 
-  @ApiProperty()
+  @ApiProperty({ description: 'Last update timestamp of the notification' })
   updatedAt: Date;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Internal version field (e.g. MongoDB document version)',
+  })
   _v: number;
 }
 
@@ -70,7 +85,7 @@ export class NotificationResponseDto {
 export class GetNotificationResponseDto extends NotificationResponseDto {}
 
 /**
- * GET ONE / GET MANY RESPONSE LIST DTO
+ * LIST RESPONSE DTO
  */
 export class GetNotificationListResponseDto extends PaginatedResponseDto(
   GetNotificationResponseDto,

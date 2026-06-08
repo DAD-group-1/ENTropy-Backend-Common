@@ -1,8 +1,41 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.47](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.46...v0.1.47) (2026-06-08)
+### [0.1.63](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.62...v0.1.63) (2026-06-07)
+
+### [0.1.62](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.61...v0.1.62) (2026-06-07)
+
+### [0.1.61](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.60...v0.1.61) (2026-06-07)
+
+### [0.1.60](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.59...v0.1.60) (2026-06-07)
+
+### [0.1.59](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.58...v0.1.59) (2026-06-07)
+
+### [0.1.58](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.57...v0.1.58) (2026-06-06)
+
+### [0.1.57](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.56...v0.1.57) (2026-06-06)
+
+### [0.1.56](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.55...v0.1.56) (2026-06-06)
+
+### [0.1.55](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.54...v0.1.55) (2026-06-06)
+
+### [0.1.54](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.53...v0.1.54) (2026-06-06)
+
+### [0.1.53](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.52...v0.1.53) (2026-06-06)
+
+### [0.1.52](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.51...v0.1.52) (2026-06-06)
+
+### [0.1.51](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.50...v0.1.51) (2026-06-06)
+
+### [0.1.50](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.49...v0.1.50) (2026-06-06)
+
+### [0.1.49](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.48...v0.1.49) (2026-06-06)
+
+### [0.1.48](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.47...v0.1.48) (2026-06-06)
+
+### [0.1.47](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.46...v0.1.47) (2026-06-04)
 
 ### [0.1.46](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.45...v0.1.46) (2026-06-04)
 
@@ -65,15 +98,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### [0.1.17](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.15...v0.1.17) (2026-06-01)
 
 ### [0.1.16](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.15...v0.1.16) (2026-06-02)
-=======
-### [0.1.19](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.18...v0.1.19) (2026-06-01)
-
-### [0.1.18](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.17...v0.1.18) (2026-06-01)
-
-### [0.1.17](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.16...v0.1.17) (2026-06-01)
-
-### [0.1.16](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.14...v0.1.16) (2026-06-01)
->>>>>>> 2f5099690cd6fddba56cf3cfeed651f7153e6401
 
 ### [0.1.15](https://github.com/DAD-group-1/ENTropy-Backend-Common/compare/v0.1.14...v0.1.15) (2026-06-01)
 
