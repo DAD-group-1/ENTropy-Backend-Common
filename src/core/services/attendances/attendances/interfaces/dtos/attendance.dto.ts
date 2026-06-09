@@ -1,7 +1,7 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { AttendanceStatus } from '../attendance.interface';
 import { PaginatedResponseDto } from '../../../../common';
-import { StudentResponseDto } from '../../../../users';
+import { UserResponseDto } from '../../../../users';
 import { ScheduleResponseDto } from '../../../../schedules';
 
 // Create Request
@@ -50,7 +50,7 @@ export class AttendanceResponseDto {
   updated_at: Date;
 
   @ApiProperty()
-  student: StudentResponseDto;
+  user: UserResponseDto;
 
   @ApiProperty()
   schedule: ScheduleResponseDto;
