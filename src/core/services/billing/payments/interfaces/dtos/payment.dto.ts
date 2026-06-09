@@ -87,6 +87,9 @@ export class PaymentResponseDto {
 
   @ApiProperty()
   user: UserResponseDto;
+
+  @ApiProperty()
+  payment_method: UserResponseDto;
 }
 
 export class PaymentListResponseDto extends PaginatedResponseDto(
