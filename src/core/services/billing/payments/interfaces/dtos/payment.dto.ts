@@ -1,7 +1,8 @@
-import { ApiProperty, PartialType } from '@nestjs/swagger';
-import { PaymentStatus } from '../payment.interface';
-import { PaginatedResponseDto } from '../../../../common';
-import { UserResponseDto } from '../../../../users';
+import {ApiProperty, PartialType} from '@nestjs/swagger';
+import {PaymentStatus} from '../payment.interface';
+import {PaginatedResponseDto} from '../../../../common';
+import {UserResponseDto} from '../../../../users';
+import {PaymentMethodResponseDto} from './payment-method.dto';
 
 export class CreatePaymentRequestDto {
   @ApiProperty({ description: 'The ID of the student' })
@@ -89,7 +90,7 @@ export class PaymentResponseDto {
   user: UserResponseDto;
 
   @ApiProperty()
-  payment_method: UserResponseDto;
+  payment_method: PaymentMethodResponseDto;
 }
 
 export class PaymentListResponseDto extends PaginatedResponseDto(
