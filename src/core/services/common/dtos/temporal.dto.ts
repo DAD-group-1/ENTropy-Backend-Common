@@ -9,13 +9,13 @@ export class TemporalQueryDto {
     description: 'The start date of the temporal query',
     example: '2024-01-01T00:00:00.000Z',
   })
-  startDate: Date;
+  startDate: string;
 
   @ApiProperty({
     description: 'The end date of the temporal query',
     example: '2024-12-31T23:59:59.999Z',
   })
-  endDate: Date;
+  endDate: string;
 }
 
 export class TemporalPaginatedQueryDto extends PaginatedResponseDto(
