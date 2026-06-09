@@ -1,4 +1,8 @@
-export enum PaymentStatus {}
+export enum PaymentStatus {
+  PAID,
+  DELAY,
+  CANCELLED,
+}
 
 export interface Payment {
   id: number;
