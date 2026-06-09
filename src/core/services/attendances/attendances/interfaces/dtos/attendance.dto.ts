@@ -1,6 +1,8 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { AttendanceStatus } from '../attendance.interface';
 import { PaginatedResponseDto } from '../../../../common';
+import { StudentResponseDto } from '../../../../users';
+import { ScheduleResponseDto } from '../../../../schedules';
 
 // Create Request
 export class CreateAttendanceRequestDto {
@@ -16,6 +18,7 @@ export class CreateAttendanceRequestDto {
   @ApiProperty({
     description: 'Optional note about attendance',
     nullable: true,
+    type: 'string',
   })
   note: string | null;
 }
@@ -37,7 +40,7 @@ export class AttendanceResponseDto {
   @ApiProperty()
   status: AttendanceStatus;
 
-  @ApiProperty({ nullable: true })
+  @ApiProperty({ nullable: true, type: 'string' })
   note: string | null;
 
   @ApiProperty()
@@ -45,6 +48,12 @@ export class AttendanceResponseDto {
 
   @ApiProperty()
   updated_at: Date;
+
+  @ApiProperty()
+  student: StudentResponseDto;
+
+  @ApiProperty()
+  schedule: ScheduleResponseDto;
 }
 
 export class AttendanceListResponseDto extends PaginatedResponseDto(
