@@ -1,7 +1,9 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { ScheduleStatus } from '../schedule.interface';
-import { PaginatedResponseDto } from '../../../../common/dtos/pagination.dto';
+import { PaginatedResponseDto } from '../../../../common';
 import { CourseResponseDto } from '../../../../courses';
+import { InstructorResponseDto } from '../../../../users';
+import { RoomResponseDto } from '../../../../infrastructures';
 
 export class CreateScheduleRequestDto {
   @ApiProperty({ description: 'The ID of the event' })
@@ -78,6 +80,12 @@ export class ScheduleResponseDto {
 
   @ApiProperty()
   course: CourseResponseDto;
+
+  @ApiProperty()
+  instructor: InstructorResponseDto;
+
+  @ApiProperty()
+  room: RoomResponseDto;
 }
 
 export class ScheduleListResponseDto extends PaginatedResponseDto(
