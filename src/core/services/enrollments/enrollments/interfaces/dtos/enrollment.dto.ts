@@ -58,9 +58,7 @@ export class EnrollmentResponseDto {
 
   @ApiProperty()
   course: CourseResponseDto;
-}
 
-export class EnrollmentStudentResponseDto extends EnrollmentResponseDto {
   @ApiProperty()
   student: StudentResponseDto;
 }
