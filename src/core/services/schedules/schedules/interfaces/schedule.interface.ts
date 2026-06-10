@@ -1,4 +1,8 @@
-export enum ScheduleStatus {}
+export enum ScheduleStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  CANCELLED = 'CANCELLED',
+}
 
 export interface Schedule {
   id: number;
