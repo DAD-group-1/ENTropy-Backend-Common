@@ -1,7 +1,7 @@
 export enum ScheduleStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE',
-  CANCELLED = 'CANCELLED',
+  ACTIVE = 1,
+  INACTIVE = 2,
+  CANCELLED = 3,
 }
 
 export interface Schedule {
