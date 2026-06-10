@@ -29,8 +29,6 @@ export class InternalSchedule {
   academic_year: number;
   @Column()
   status: ScheduleStatus;
-  @Column()
-  last_modified: Date;
   @CreateDateColumn()
   created_at: Date;
   @UpdateDateColumn()

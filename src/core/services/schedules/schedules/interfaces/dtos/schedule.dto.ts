@@ -68,9 +68,6 @@ export class ScheduleResponseDto {
   status: ScheduleStatus;
 
   @ApiProperty()
-  last_modified: Date;
-
-  @ApiProperty()
   created_at: Date;
 
   @ApiProperty()

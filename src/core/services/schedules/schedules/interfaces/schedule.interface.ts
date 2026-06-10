@@ -15,7 +15,6 @@ export interface Schedule {
   semester: number;
   academic_year: number;
   status: ScheduleStatus;
-  last_modified: Date;
   created_at: Date;
   updated_at: Date;
 }
