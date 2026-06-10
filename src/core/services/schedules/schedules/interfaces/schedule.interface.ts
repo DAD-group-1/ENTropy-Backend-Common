@@ -6,7 +6,6 @@ export enum ScheduleStatus {
 
 export interface Schedule {
   id: number;
-  event_id: number;
   course_id: number;
   instructor_id: number;
   room_id: number;

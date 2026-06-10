@@ -6,9 +6,6 @@ import { InstructorResponseDto } from '../../../../users';
 import { RoomResponseDto } from '../../../../infrastructures';
 
 export class CreateScheduleRequestDto {
-  @ApiProperty({ description: 'The ID of the event' })
-  event_id: number;
-
   @ApiProperty({ description: 'The ID of the course' })
   course_id: number;
 
@@ -41,9 +38,6 @@ export class UpdateScheduleRequestDto extends PartialType(
 export class ScheduleResponseDto {
   @ApiProperty()
   id: number;
-
-  @ApiProperty()
-  event_id: number;
 
   @ApiProperty()
   course_id: number;
