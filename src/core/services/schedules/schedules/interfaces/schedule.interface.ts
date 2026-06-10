@@ -1,7 +1,7 @@
 export enum ScheduleStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE',
-  CANCELLED = 'CANCELLED',
+  ACTIVE = 1,
+  INACTIVE = 2,
+  CANCELLED = 3,
 }
 
 export interface Schedule {
@@ -15,7 +15,6 @@ export interface Schedule {
   semester: number;
   academic_year: number;
   status: ScheduleStatus;
-  last_modified: Date;
   created_at: Date;
   updated_at: Date;
 }
