@@ -44,7 +44,7 @@ export const createWinstonLogger = (
         host: process.env.SEQ_HOST || 'localhost',
         port: parseInt(process.env.SEQ_PORT || '5341'),
         path: `/api/events/raw?${process.env.SEQ_API_KEY}`,
-        ssl: false,
+        ssl: true,
         format: winston.format.combine(clefFormat(), winston.format.json()),
         headers: {
           'Content-Type': 'application/vnd.serilog.clef',
