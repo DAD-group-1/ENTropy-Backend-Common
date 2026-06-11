@@ -35,6 +35,7 @@ export const createWinstonLogger = (
         host: process.env.SEQ_HOST || 'localhost',
         port: parseInt(process.env.SEQ_PORT || '5341'),
         path: `/api/events/raw?clef&apiKey=${process.env.SEQ_API_KEY || ''}`,
+        ssl: false,
         format: winston.format.combine(
           winston.format.timestamp(),
           winston.format.json(),
