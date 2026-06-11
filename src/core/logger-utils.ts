@@ -43,7 +43,7 @@ export const createWinstonLogger = (
       new winston.transports.Http({
         host: process.env.SEQ_HOST || 'localhost',
         port: parseInt(process.env.SEQ_PORT || '5341'),
-        path: `/api/events/raw?${process.env.SEQ_API_KEY}`,
+        path: `/api/events/raw`,
         ssl: true,
         format: winston.format.combine(clefFormat(), winston.format.json()),
         headers: {
