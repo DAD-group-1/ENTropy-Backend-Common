@@ -1,6 +1,7 @@
 import { WinstonModule } from 'nest-winston';
 import { LoggerService } from '@nestjs/common';
 import winston from 'winston';
+import { SeqClefTransport } from './seq-utils';
 
 const clefFormat = winston.format((info) => {
   return {
@@ -40,18 +41,12 @@ export const createWinstonLogger = (
         ? [new winston.transports.Console({ format: winston.format.cli() })]
         : []),
 
-      new winston.transports.Http({
+      new SeqClefTransport({
         host: process.env.SEQ_HOST || 'localhost',
         port: parseInt(process.env.SEQ_PORT || '5341'),
-        path: `/api/events/raw`,
-        ssl: true,
-        format: winston.format.combine(clefFormat(), winston.format.json()),
-        headers: {
-          'Content-Type': 'application/vnd.serilog.clef',
-          ...(process.env.SEQ_API_KEY
-            ? { 'X-Seq-ApiKey': process.env.SEQ_API_KEY }
-            : {}),
-        },
+        apiKey: process.env.SEQ_API_KEY,
+        ssl: true, // match your working test
+        level: 'debug',
       }),
     ],
   });
