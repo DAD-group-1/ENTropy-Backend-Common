@@ -30,5 +30,15 @@ export const createWinstonLogger = (
       ...(process.env.ENVIRONMENT == 'DEV'
         ? [new winston.transports.Console({ format: winston.format.cli() })]
         : []),
+
+      new winston.transports.Http({
+        host: process.env.SEQ_HOST || 'localhost',
+        port: parseInt(process.env.SEQ_PORT || '5341'),
+        path: `/api/events/raw?clef&apiKey=${process.env.SEQ_API_KEY || ''}`,
+        format: winston.format.combine(
+          winston.format.timestamp(),
+          winston.format.json(),
+        ),
+      }),
     ],
   });

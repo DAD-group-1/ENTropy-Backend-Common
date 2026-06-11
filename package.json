@@ -26,7 +26,8 @@
     "nest-winston": "^1.10.2",
     "standard-version": "^9.5.0",
     "typeorm": "^1.0.0",
-    "winston": "^3.19.0"
+    "winston": "^3.19.0",
+    "winston-seq": "^0.1.0"
   },
   "repository": {
     "type": "git",
