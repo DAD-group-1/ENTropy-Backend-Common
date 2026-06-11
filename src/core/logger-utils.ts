@@ -1,7 +1,15 @@
 import { WinstonModule } from 'nest-winston';
 import { LoggerService } from '@nestjs/common';
 import winston from 'winston';
-import { SeqTransport } from '@datalust/winston-seq';
+
+const clefFormat = winston.format((info) => {
+  return {
+    ...info,
+    '@t': new Date().toISOString(),
+    '@mt': info.message,
+    '@l': info.level,
+  };
+});
 
 /**
  * Creates a Winston logger configured for NestJS applications.
@@ -32,16 +40,18 @@ export const createWinstonLogger = (
         ? [new winston.transports.Console({ format: winston.format.cli() })]
         : []),
 
-      new SeqTransport({
-        serverUrl: `${process.env.SEQ_HOST_PROTOCOL}://${process.env.SEQ_HOST || 'localhost'}:${process.env.SEQ_PORT || '5341'}`,
-        apiKey: process.env.SEQ_API_KEY || undefined,
-        onError: (e) => console.error('Seq transport error:', e),
-        handleExceptions: true,
-        handleRejections: true,
-        format: winston.format.combine(
-          winston.format.timestamp(),
-          winston.format.json(),
-        ),
+      new winston.transports.Http({
+        host: process.env.SEQ_HOST || 'localhost',
+        port: parseInt(process.env.SEQ_PORT || '5341'),
+        path: `/api/events/raw?${process.env.SEQ_API_KEY}`,
+        ssl: false,
+        format: winston.format.combine(clefFormat(), winston.format.json()),
+        headers: {
+          'Content-Type': 'application/vnd.serilog.clef',
+          ...(process.env.SEQ_API_KEY
+            ? { 'X-Seq-ApiKey': process.env.SEQ_API_KEY }
+            : {}),
+        },
       }),
     ],
   });
