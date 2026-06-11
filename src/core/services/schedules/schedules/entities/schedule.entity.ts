@@ -12,8 +12,6 @@ export class InternalSchedule {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
-  event_id: number;
-  @Column()
   course_id: number;
   @Column()
   instructor_id: number;
