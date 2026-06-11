@@ -45,7 +45,7 @@ export const createWinstonLogger = (
         host: process.env.SEQ_HOST || 'localhost',
         port: parseInt(process.env.SEQ_PORT || '5341'),
         apiKey: process.env.SEQ_API_KEY,
-        ssl: true, // match your working test
+        ssl: false,
         level: 'debug',
       }),
     ],
